@@ -1,0 +1,25 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "This repo generates my CV into HTML and PDF.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "demo": "npm run build && light-server --serve dist --open --delay 1000 --watchexp 'src/** # npm run build'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/margani/cv.git"
+  },
+  "keywords": ["cv", "generator"],
+  "author": "Hossein Margani <hossein@margani.dev>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/margani/cv/issues"
+  },
+  "homepage": "https://github.com/margani/cv#readme",
+  "dependencies": {
+    "light-server": "^2.9.1",
+    "nunjucks": "^3.2.3"
+  }
+}
