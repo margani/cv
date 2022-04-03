@@ -11,7 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/margani/cv.git"
   },
-  "keywords": ["cv", "generator"],
+  "keywords": [
+    "cv",
+    "generator"
+  ],
   "author": "Hossein Margani <hossein@margani.dev>",
   "license": "ISC",
   "bugs": {
@@ -20,6 +23,7 @@
   "homepage": "https://github.com/margani/cv#readme",
   "dependencies": {
     "light-server": "^2.9.1",
-    "nunjucks": "^3.2.3"
+    "nunjucks": "^3.2.3",
+    "nunjucks-date": "^1.5.0"
   }
 }
