@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ name }}'s CV</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <meta name="description" content=""/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+        <style type="text/css">
+            page[size="A4"] {
+                width: 21cm;
+                height: 29.7cm;
+                position: relative;
+                padding: 0 1cm;
+                top: 50px;
+                display: block;
+                margin: 15px auto;
+            }
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            ul {
+                margin: 0;
+                padding-left: 15px;
+            }
+            ul.skills li {
+                line-height: 20pt;
+            }
+            .fs-14 {
+                font-size: 14px;
+            }
+            .icon {
+                font-size: 14px;
+            }
+            .stage {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+            @media print {
+                body,
+                page[size="A4"] {
+                    margin: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <page size="A4">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h1 class="fs-3"><span class="text-primary">{{ name }}</span>&nbsp;<small class="fs-6">({{ gender }})</small></h1>
+                        <h6 class="fs-6">{{ title }}</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="pt-3 pb-3">
+                        {{ summary }}
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h3 class="fs-5 text-primary">Details</h3>
+                        <div class="pb-3">
+                            <div>
+                                <ion-icon name="location-outline" class="icon"></ion-icon>
+                                {{ details.location }}
+                            </div>
+                            <div>
+                                <ion-icon name="at-outline" class="icon"></ion-icon>
+                                <a href="mailto:{{ details.email }}">{{ details.email }}</a>
+                            </div>
+                            <div>
+                                <ion-icon name="earth" class="icon"></ion-icon>
+                                <a href="{{ details.website }}">{{ details.website | shortUrl }}</a>
+                            </div>
+                            <div>
+                                <ion-icon name="logo-github" class="icon"></ion-icon>
+                                <a href="{{ details.github }}">{{ details.github | shortUrl }}</a>
+                            </div>
+                            <div>
+                                <ion-icon name="logo-linkedin" class="icon"></ion-icon>
+                                <a href="{{ details.linkedIn }}">{{ details.linkedIn | shortUrl }}</a>
+                            </div>
+                            <div>
+                                <ion-icon name="calendar-outline" class="icon"></ion-icon>
+                                <a href="{{ details.meeting }}">{{ details.meeting | shortUrl }}</a>
+                            </div>
+                        </div>
+                        <h3 class="fs-5 text-primary">Skills</h3>
+                        <ul class="skills fs-14">
+                            {% for skill in skills -%}
+                                <li>{{ skill }}</li>
+                            {%- endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-sm-8">
+                        <h3 class="fs-5 text-primary">Employment</h3>
+                        {% for employment in history.employment -%}
+                            <div class='stage'>
+                                <span class="fs-5">{{ employment.title }}</span>
+                                <span class="fs-6">{{ employment.employer }}</span>
+                                <div class="fs-14 pb-1">
+                                    <ion-icon name="calendar-outline" class="icon"></ion-icon>
+                                    <span>{{ employment.startDate }} - {{ employment.endDate if employment.endDate else "Now" }} ({{ employment.endDate | dateDiff(employment.startDate) }})</span>
+                                    <span>, </span>
+                                    <ion-icon class="icon" name="location-outline"></ion-icon>
+                                    <span>{{ employment.location }}</span>
+                                </div>
+                                <div class='fs-14 pb-3'>
+                                    {% if isArray(employment.description) %}
+                                        <ul>
+                                            {% for description in employment.description -%}
+                                                <li>{{description}}</li>
+                                            {%- endfor %}
+                                        </ul>
+                                    {% else %}
+                                        <span>{{ employment.description }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {%- endfor %}
+                        <h3 class="fs-5 text-primary">Education</h3>
+                        {% for education in history.education -%}
+                            <div class='stage'>
+                                <div class="fs-5">{{ education.school }}</div>
+                                <span class="fs-6">{{ education.degree }} in {{ education.field }}</span>
+                                <div class="fs-14 pb-1">
+                                    <ion-icon name="calendar-outline" class="icon"></ion-icon>
+                                    <span>{{ education.startDate }} - {{ education.endDate if education.endDate else "" }}, </span>
+                                    <ion-icon class="icon" name="location-outline"></ion-icon>
+                                    <span>{{ education.location }}</span>
+                                </div>
+                                <div class='fs-14 pb-3'>
+                                    <span>{{ education.description }}</span>
+                                </div>
+                            </div>
+                        {%- endfor %}
+                        <h3 class="fs-5 text-primary">Projects</h3>
+                        {% for project in projects -%}
+                            <div class='stage'>
+                                {% set projectUrl = project.url if project.url else '' %}
+                                {% if projectUrl %}
+                                    {% set projectUrl = ' (<a href="' + projectUrl + '">' + projectUrl | shortUrl + '</a>)' %}
+                                {% endif %}
+                                <span class="fs-5">{{ project.title }}</span>{{ projectUrl | safe }}
+                                <div class='fs-14 pb-3'>
+                                    <span>{{ project.description }}</span>
+                                </div>
+                            </div>
+                        {%- endfor %}
+                    </div>
+                </div>
+            </div>
+        </page>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
