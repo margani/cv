@@ -60,41 +60,6 @@
                     </p>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4">
-                        <h3 class="fs-5 text-primary">Details</h3>
-                        <div class="pb-3">
-                            <div>
-                                <ion-icon name="location-outline" class="icon"></ion-icon>
-                                {{ details.location }}
-                            </div>
-                            <div>
-                                <ion-icon name="at-outline" class="icon"></ion-icon>
-                                <a href="mailto:{{ details.email }}">{{ details.email }}</a>
-                            </div>
-                            <div>
-                                <ion-icon name="earth" class="icon"></ion-icon>
-                                <a href="{{ details.website }}">{{ details.website | shortUrl }}</a>
-                            </div>
-                            <div>
-                                <ion-icon name="logo-github" class="icon"></ion-icon>
-                                <a href="{{ details.github }}">{{ details.github | shortUrl }}</a>
-                            </div>
-                            <div>
-                                <ion-icon name="logo-linkedin" class="icon"></ion-icon>
-                                <a href="{{ details.linkedIn }}">{{ details.linkedIn | shortUrl }}</a>
-                            </div>
-                            <div>
-                                <ion-icon name="calendar-outline" class="icon"></ion-icon>
-                                <a href="{{ details.meeting }}">{{ details.meeting | shortUrl }}</a>
-                            </div>
-                        </div>
-                        <h3 class="fs-5 text-primary">Skills</h3>
-                        <ul class="skills fs-14">
-                            {% for skill in skills -%}
-                                <li>{{ skill }}</li>
-                            {%- endfor %}
-                        </ul>
-                    </div>
                     <div class="col-sm-8">
                         <h3 class="fs-5 text-primary">Employment</h3>
                         {% for employment in history.employment -%}
@@ -150,6 +115,41 @@
                                 </div>
                             </div>
                         {%- endfor %}
+                    </div>
+                    <div class="col-sm-4">
+                        <h3 class="fs-5 text-primary">Details</h3>
+                        <div class="pb-3">
+                            <div>
+                                <ion-icon name="location-outline" class="icon"></ion-icon>
+                                {{ details.location }}
+                            </div>
+                            <div>
+                                <ion-icon name="at-outline" class="icon"></ion-icon>
+                                <a href="mailto:{{ details.email }}">{{ details.email }}</a>
+                            </div>
+                            <div>
+                                <ion-icon name="earth" class="icon"></ion-icon>
+                                <a href="{{ details.website }}">{{ details.website | shortUrl }}</a>
+                            </div>
+                            <div>
+                                <ion-icon name="logo-github" class="icon"></ion-icon>
+                                <a href="{{ details.github }}">{{ details.github | shortUrl }}</a>
+                            </div>
+                            <div>
+                                <ion-icon name="logo-linkedin" class="icon"></ion-icon>
+                                <a href="{{ details.linkedIn }}">{{ details.linkedIn | shortUrl }}</a>
+                            </div>
+                            <div>
+                                <ion-icon name="calendar-outline" class="icon"></ion-icon>
+                                <a href="{{ details.meeting }}">{{ details.meeting | shortUrl }}</a>
+                            </div>
+                        </div>
+                        <h3 class="fs-5 text-primary">Skills</h3>
+                        <ul class="skills fs-14">
+                            {% for skill in skills -%}
+                                <li>{{ skill }}</li>
+                            {%- endfor %}
+                        </ul>
                     </div>
                 </div>
             </div>
