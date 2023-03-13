@@ -33,7 +33,11 @@ env.addFilter('dateDiff', function (from, to) {
 })
 
 env.addFilter('shortUrl', function (url) {
-  return url.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/^\/|\/$/g, '').replace(/^linkedin\.com/, '')
+  return url
+    .replace(/^https?:\/\//, '')
+    .replace(/^www\./, '')
+    .replace(/^\/|\/$/g, '')
+    .replace(/^linkedin\.com/, '')
 })
 
 env.addGlobal('isArray', function (obj) {
