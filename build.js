@@ -17,11 +17,27 @@ env.addFilter('dateDiff', function (from, to) {
   const years = Math.floor(days / 365)
   const remainingDays = days % 365
   const months = remainingDays > 0 ? Math.floor(remainingDays / 30) : 0
-  return `${years} ${years > 1 ? 'yrs' : 'yr'}${months > 0 ? ` ${months} ${months > 1 ? 'mos' : 'mo'}` : ''}`
+  let yrs = ''
+  let mos = ''
+  let space = ''
+  if (years > 0) {
+    yrs = `${years} yr`
+    if (years > 1) yrs += 's'
+    if (months > 0) space = ' '
+  }
+  if (months > 0) {
+    mos = `${months} mo`
+    if (months > 1) mos += 's'
+  }
+  return `${yrs}${space}${mos}`
 })
 
 env.addFilter('shortUrl', function (url) {
-  return url.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/^\/|\/$/g, '').replace(/^linkedin\.com/, '')
+  return url
+    .replace(/^https?:\/\//, '')
+    .replace(/^www\./, '')
+    .replace(/^\/|\/$/g, '')
+    .replace(/^linkedin\.com/, '')
 })
 
 env.addGlobal('isArray', function (obj) {
