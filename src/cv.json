@@ -21,10 +21,20 @@
     "history": {
         "employment": [
             {
+                "title": "DevSecOps Solutions Architect",
+                "employer": "Aqovia",
+                "location": "London, UK",
+                "startDate": "Aug 2022",
+                "description": [
+
+                ]
+            },
+            {
                 "title": "DevOps Engineer",
                 "employer": "Aqovia",
                 "location": "London, UK",
                 "startDate": "Oct 2018",
+                "endDate": "Aug 2022",
                 "description": [
                     "Developed and maintained scripts and templates for automating CI/CD pipelines in Azure",
                     "Developed and maintained ARM/Bicep templates for provisioning Azure resources",
