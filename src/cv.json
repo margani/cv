@@ -1,137 +1,136 @@
 {
-    "name": "Hossein Margani",
-    "gender": "He/Him",
-    "title": "Software Engineer",
-    "details": {
+  "name": "Hossein Margani",
+  "gender": "He/Him",
+  "title": "Software Engineer",
+  "details": {
+    "location": "London, UK",
+    "email": "hossein@margani.dev",
+    "website": "https://margani.dev/",
+    "meeting": "https://calendly.com/margani/",
+    "github": "https://github.com/margani/",
+    "linkedIn": "https://www.linkedin.com/in/hosseinmargani/"
+  },
+  "summary": "A highly focused senior software engineer. Experienced with a wide range of backends and frontend technologies, specialized primarily in .NET and DevOps. Understanding customer requirements plus communicating the progress of projects are the core values.",
+  "skills": [
+    "C# .NET Core, SQL Server, Microservices, WCF, RESTful API, React, Vue.js, Redux, ES6",
+    "Azure Cloud, Azure Pipelines (YAML)",
+    "PostgreSQL, MongoDB",
+    "Knowledge of Linux and scripting languages (Python, Bash and PowerShell)",
+    "Good understanding of DevOps key concepts like Infrastructure as code (IaC)"
+  ],
+  "history": {
+    "employment": [
+      {
+        "title": "DevSecOps Solutions Architect",
+        "employer": "Aqovia",
         "location": "London, UK",
-        "email": "hossein@margani.dev",
-        "website": "https://margani.dev/",
-        "meeting": "https://calendly.com/margani/",
-        "github": "https://github.com/margani/",
-        "linkedIn": "https://www.linkedin.com/in/hosseinmargani/"
-    },
-    "summary": "A highly focused senior software engineer. Experienced with a wide range of backends and frontend technologies, specialized primarily in .NET and DevOps. Understanding customer requirements plus communicating the progress of projects are the core values.",
-    "skills": [
-        "C# .NET Core, SQL Server, Microservices, WCF, RESTful API, React, Vue.js, Redux, ES6",
-        "Azure Cloud, Azure Pipelines (YAML)",
-        "PostgreSQL, MongoDB",
-        "Knowledge of Linux and scripting languages (Python, Bash and PowerShell)",
-        "Good understanding of DevOps key concepts like Infrastructure as code (IaC)"
-    ],
-    "history": {
-        "employment": [
-            {
-                "title": "DevSecOps Solutions Architect",
-                "employer": "Aqovia",
-                "location": "London, UK",
-                "startDate": "Aug 2022",
-                "description": [
-                  "Designed, implemented, and maintained secure, scalable, and efficient cloud infrastructures using cutting-edge technologies and best practices",
-                  "Automated and orchestrated continuous integration and delivery pipelines in Azure",
-                  "Developed and maintained ARM/Bicep templates for provisioning Azure resources"
-                ]
-            },
-            {
-                "title": "DevOps Engineer",
-                "employer": "Aqovia",
-                "location": "London, UK",
-                "startDate": "Oct 2018",
-                "endDate": "Aug 2022",
-                "description": [
-                    "Developed and maintained scripts and templates for automating CI/CD pipelines in Azure",
-                    "Developed and maintained ARM/Bicep templates for provisioning Azure resources",
-                    "Orchestrated Docker container clusters using Azure Kubernetes and Helm v3",
-                    "Built and deployed Docker containers for application sandboxes",
-                    "Automated provisioning of servers and deploying features using Chef, Vagrant and Octopus Deploy"
-                ]
-            },
-            {
-                "title": "Senior Software Engineer",
-                "employer": "Aqovia",
-                "location": "London, UK",
-                "startDate": "Oct 2017",
-                "endDate": "Oct 2018",
-                "description": [
-                    "Collaborated productively with the team to understand requirements and business specifications",
-                    "Full stack development with .NET, lit-html, Redux, TDD and CI/CD",
-                    "Developed and maintained web application architecture, microservices and modern component-based user interfaces"
-                ]
-            },
-            {
-                "title": "Senior Software Engineer",
-                "employer": "Geeks Ltd",
-                "location": "London, UK",
-                "startDate": "Mar 2016",
-                "endDate": "Sep 2017",
-                "description": [
-                    "Developed and maintained web-based applications using multiple technologies including ASP.NET, C#, RESTful API and Web API 2",
-                    "Contributed to many core company internal tools written in C#",
-                    "Lead and manage junior developers in the company with code refactoring and training"
-                ]
-            },
-            {
-                "title": "Software Engineer",
-                "employer": "PTC",
-                "location": "Mashhad, Iran",
-                "startDate": "Feb 2014",
-                "endDate": "Jun 2015",
-                "description": [
-                    "Built four new applications on top of pre-built architecture for POS and Sales platforms: report generator, form generator, print designer and report dashboards",
-                    "Built workflow designer on top of the above systems, so customers could design workflow or data flow of those systems"
-                ]
-            },
-            {
-                "title": "Software Developer",
-                "employer": "GoldNet Engineering Group",
-                "location": "Mashhad, Iran",
-                "startDate": "Jun 2010",
-                "endDate": "Feb 2014",
-                "description": [
-                    "Developed telnet manager using Java and MySQL for Cisco router users to login, and for admin to have custom authorisation over many routers, with searching on who did what on a router",
-                    "Developed and configured a cache in an ISP with plugins such as one for showing advertisements for home ADSL users, and another for reduce quality of images based on user's preferences to save bandwidth and increase internet speed",
-                    "Developed a base architecture of all projects, for junior developers to easily develop and maintain them"
-                ]
-            },
-            {
-                "title": "Software Developer",
-                "employer": "Moshaveran Meshcut Shargh",
-                "location": "Mashhad, Iran",
-                "startDate": "May 2006",
-                "endDate": "May 2010",
-                "description": [
-                ]
-            }
-        ],
-        "education": [
-            {
-                "school": "Islamic Azad University of Mashhad",
-                "degree": "M.Sc.",
-                "field": "Computer Software Engineering",
-                "location": "Mashhad, Iran",
-                "startDate": "2006",
-                "endDate": "2010",
-                "description": "Developed an enhanced algorithm for image encryption using cellular automata and chaos theory"
-            },
-            {
-                "school": "Sadjad Institute of Higher Education",
-                "degree": "B.Sc.",
-                "field": "Computer Software Engineering",
-                "location": "Mashhad, Iran",
-                "startDate": "2001",
-                "endDate": "2005",
-                "description": "Developed an algorithm for fast detection of glass particles in glass containers to use in the production line using C# and MATLAB"
-            }
+        "startDate": "Aug 2022",
+        "description": [
+          "Designed, implemented, and maintained secure, scalable, and efficient cloud infrastructures using cutting-edge technologies and best practices",
+          "Automated and orchestrated continuous integration and delivery pipelines in Azure",
+          "Developed and maintained ARM/Bicep templates for provisioning Azure resources"
         ]
-    },
-    "projects": [
-        {
-            "title": "Static Site Generator",
-            "description": "Developed using NodeJS and Nunjucks to generate static site based on data sources such as JSON, SQLite and MongoDB."
-        },
-        {
-            "title": "CV Generator",
-            "description": "Developed on a Sunday using NodeJS and Nunjucks to generate this CV based on the info in a JSON file.",
-            "url": "https://github.com/margani/cv"
-        }
+      },
+      {
+        "title": "DevOps Engineer",
+        "employer": "Aqovia",
+        "location": "London, UK",
+        "startDate": "Oct 2018",
+        "endDate": "Aug 2022",
+        "description": [
+          "Developed and maintained scripts and templates for automating CI/CD pipelines in Azure",
+          "Developed and maintained ARM/Bicep templates for provisioning Azure resources",
+          "Orchestrated Docker container clusters using Azure Kubernetes and Helm v3",
+          "Built and deployed Docker containers for application sandboxes",
+          "Automated provisioning of servers and deploying features using Chef, Vagrant and Octopus Deploy"
+        ]
+      },
+      {
+        "title": "Senior Software Engineer",
+        "employer": "Aqovia",
+        "location": "London, UK",
+        "startDate": "Oct 2017",
+        "endDate": "Oct 2018",
+        "description": [
+          "Collaborated productively with the team to understand requirements and business specifications",
+          "Full stack development with .NET, lit-html, Redux, TDD and CI/CD",
+          "Developed and maintained web application architecture, microservices and modern component-based user interfaces"
+        ]
+      },
+      {
+        "title": "Senior Software Engineer",
+        "employer": "Geeks Ltd",
+        "location": "London, UK",
+        "startDate": "Mar 2016",
+        "endDate": "Sep 2017",
+        "description": [
+          "Developed and maintained web-based applications using multiple technologies including ASP.NET, C#, RESTful API and Web API 2",
+          "Contributed to many core company internal tools written in C#",
+          "Lead and manage junior developers in the company with code refactoring and training"
+        ]
+      },
+      {
+        "title": "Software Engineer",
+        "employer": "PTC",
+        "location": "Mashhad, Iran",
+        "startDate": "Feb 2014",
+        "endDate": "Jun 2015",
+        "description": [
+          "Built four new applications on top of pre-built architecture for POS and Sales platforms: report generator, form generator, print designer and report dashboards",
+          "Built workflow designer on top of the above systems, so customers could design workflow or data flow of those systems"
+        ]
+      },
+      {
+        "title": "Software Developer",
+        "employer": "GoldNet Engineering Group",
+        "location": "Mashhad, Iran",
+        "startDate": "Jun 2010",
+        "endDate": "Feb 2014",
+        "description": [
+          "Developed telnet manager using Java and MySQL for Cisco router users to login, and for admin to have custom authorisation over many routers, with searching on who did what on a router",
+          "Developed and configured a cache in an ISP with plugins such as one for showing advertisements for home ADSL users, and another for reduce quality of images based on user's preferences to save bandwidth and increase internet speed",
+          "Developed a base architecture of all projects, for junior developers to easily develop and maintain them"
+        ]
+      },
+      {
+        "title": "Software Developer",
+        "employer": "Moshaveran Meshcut Shargh",
+        "location": "Mashhad, Iran",
+        "startDate": "May 2006",
+        "endDate": "May 2010",
+        "description": []
+      }
+    ],
+    "education": [
+      {
+        "school": "Islamic Azad University of Mashhad",
+        "degree": "M.Sc.",
+        "field": "Computer Software Engineering",
+        "location": "Mashhad, Iran",
+        "startDate": "2006",
+        "endDate": "2010",
+        "description": "Developed an enhanced algorithm for image encryption using cellular automata and chaos theory"
+      },
+      {
+        "school": "Sadjad Institute of Higher Education",
+        "degree": "B.Sc.",
+        "field": "Computer Software Engineering",
+        "location": "Mashhad, Iran",
+        "startDate": "2001",
+        "endDate": "2005",
+        "description": "Developed an algorithm for fast detection of glass particles in glass containers to use in the production line using C# and MATLAB"
+      }
     ]
+  },
+  "projects": [
+    {
+      "title": "Static Site Generator",
+      "description": "Developed using NodeJS and Nunjucks to generate static site based on data sources such as JSON, SQLite and MongoDB."
+    },
+    {
+      "title": "CV Generator",
+      "description": "Developed on a Sunday using NodeJS and Nunjucks to generate this CV based on the info in a JSON file.",
+      "url": "https://github.com/margani/cv"
+    }
+  ]
 }
