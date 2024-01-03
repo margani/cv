@@ -26,7 +26,9 @@
                 "location": "London, UK",
                 "startDate": "Aug 2022",
                 "description": [
-
+                  "Designed, implemented, and maintained secure, scalable, and efficient cloud infrastructures using cutting-edge technologies and best practices",
+                  "Automated and orchestrated continuous integration and delivery pipelines in Azure",
+                  "Developed and maintained ARM/Bicep templates for provisioning Azure resources"
                 ]
             },
             {
