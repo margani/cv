@@ -99,8 +99,6 @@
                 "startDate": "May 2006",
                 "endDate": "May 2010",
                 "description": [
-                    "Developed a modular CMS for basic users to create their own website with no HTML knowledge, using ASP.NET, C#, jQuery and SQL Server",
-                    "Developed a news crawler bot and website for an organisation to download and optimise news items for readability and enable users to create their own bulletin for their organisation. The challenge was scraping news items from very news websites with a very old HTML code standard, sometimes with no standard"
                 ]
             }
         ],
