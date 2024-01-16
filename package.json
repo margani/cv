@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node build.js",
-    "demo": "npm run build && light-server --serve dist --open --delay 1000 --watchexp 'src/** # npm run build'"
+    "demo": "npm run build && light-server --serve dist --open --delay 100 --watchexp \"src/** # npm run build # reload\""
   },
   "repository": {
     "type": "git",
