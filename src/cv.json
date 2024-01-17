@@ -11,13 +11,11 @@
     "linkedIn": "https://www.linkedin.com/in/hosseinmargani/"
   },
   "summary": [
-    "Dynamic and results-oriented DevSecOps Solutions Architect with over four years of hands-on experience in designing, implementing, and maintaining secure and efficient cloud infrastructures and a solid foundation in software development.",
-    "Proven expertise in Azure infrastructure, encompassing cost estimation, architectural design, and implementation, with a focus on optimizing cloud resources for cost-effectiveness and scalability.",
-    "Adept at orchestrating seamless CI/CD pipelines using Octopus Deploy, Azure Pipelines, and GitHub Actions, ensuring efficient and reliable software delivery through automation and continuous integration."
+    "Dynamic and achievement-focused DevSecOps Solutions Architect with over four years of hands-on experience in designing, implementing, and maintaining secure and efficient cloud infrastructures and a solid foundation in software development."
   ],
   "skills": [
-    "Demonstrated expertise in Azure infrastructure, excelling in cost estimation, architectural design, and implementation. Proven track record of optimizing cloud resources to ensure cost-effectiveness while maintaining high-performance and scalability.",
-    "Expert in orchestrating seamless CI/CD pipelines using Octopus Deploy, Azure Pipelines and GitHub Actions, ensuring efficient and reliable delivery of software solutions with a focus on automation and continuous integration.",
+    "Demonstrated expertise in Azure infrastructure, excelling in cost estimation, architectural design, and implementation. Proven success in optimizing cloud resources to ensure cost-effectiveness while maintaining high-performance and scalability.",
+    "Expert in orchestrating CI/CD pipelines using Octopus Deploy, Azure Pipelines and GitHub Actions, ensuring efficient and reliable delivery of software solutions with a focus on automation and continuous integration.",
     "Expert in PowerShell, Bash and Python scripting for efficient process automation",
     "Expert in C#, .NET Core, SQL Server, RESTful API",
     "Expert in crafting and managing Infrastructure as Code solutions using ARM and Bicep templates, ensuring scalable, efficient, and automated deployment of cloud resources."
@@ -36,7 +34,7 @@
           "Provided mentorship and support to team members, fostering skill development and knowledge sharing within the teams.",
           "Leveraged expert knowledge of Azure infrastructure to architect, implement, and maintain secure cloud environments, optimizing resources for cost-effectiveness and scalability.",
           "Collaborated closely with developers to understand project requirements, translating them into effective infrastructure solutions that supported seamless development and deployment workflows.",
-          "Implemented and championed DevSecOps practices within the teams, integrating security seamlessly into the development and deployment pipelines.",
+          "Championed and embedded DevSecOps practices within the teams, integrating security into the development and deployment pipelines.",
           "Ensured the adoption of security best practices, conducting regular assessments, and implementing measures to enhance the overall security posture of the projects.",
           "Encouraged a culture of continuous improvement, regularly evaluating and enhancing the efficiency of CI/CD pipelines and infrastructure provisioning processes.",
           "Introduced innovative solutions and tools to streamline development workflows, increase automation, and improve overall project delivery timelines."
@@ -49,18 +47,18 @@
         "startDate": "Oct 2018",
         "endDate": "Aug 2022",
         "description": [
-          "Developed and maintained scripts and templates for automating CI/CD pipelines in Azure Pipelines (YAML).",
-          "Developed and maintained ARM/Bicep templates for provisioning Azure resources for environments.",
+          "Crafted and maintained scripts and templates for automating CI/CD pipelines in Azure Pipelines (YAML).",
+          "Designed and maintained ARM/Bicep templates for provisioning Azure resources for environments.",
           "Orchestrated container clusters using Azure Kubernetes and Helm v3 charts and Docker containers for deploying external API sandboxes.",
-          "Implemented an Azure Pipelines-based pipeline for seamlessly patching and updating Azure Kubernetes clusters to the latest version.",
+          "Established an Azure Pipelines-based pipeline for patching and updating Azure Kubernetes clusters to the latest version.",
           "Provided expert consultation to the development team on optimizing Azure cloud services and implementing efficient DevOps practices. Collaborated with team members to implement robust CI/CD pipelines, ensuring seamless integration of new features and enhancements.",
           "Automated provisioning of test environments using Chef, Vagrant and Octopus Deploy.",
-          "Automated nightly deployment of pipelines to test environments using Azure Pipelines (YAML) and Azure Automation Accounts (PowerShell), complemented by the creation of an informative dashboard in Azure DevOps showcasing the status of all pipeline runs.",
+          "Streamlined nightly deployment of pipelines to test environments using Azure Pipelines (YAML) and Azure Automation Accounts (PowerShell), complemented by the creation of an informative dashboard in Azure DevOps showcasing the status of all pipeline runs.",
           "Developed an Octopus Deploy Runbook to automate and orchestrate a complex, cross-team process within the client's organization, significantly reducing the timeline from a month to less than a week.",
-          "Implemented private endpoints for Azure services, enhancing security by restricting resource access to designated networks and subnets.",
+          "Set up and configured private endpoints for Azure services, enhancing security by restricting resource access to designated networks and subnets.",
           "Managed and sustained WAF policies for Azure Front Door, ensuring robust security measures for front-end applications and APIs.",
           "Established and upheld SQL vulnerability assessments for Azure SQL databases, offering insightful recommendations to the development team for prompt issue resolution.",
-          "Implemented and configured deployment slots for Azure Function Apps, enabling seamless, zero-downtime deployments for microservices and APIs."
+          "Set up and configured deployment slots for Azure Function Apps, enabling zero-downtime deployments for microservices and APIs."
         ]
       },
       {
@@ -110,18 +108,14 @@
         "degree": "M.Sc.",
         "field": "Computer Software Engineering",
         "location": "Mashhad, Iran",
-        "startDate": "2006",
-        "endDate": "2010",
-        "description": "Developed an enhanced algorithm for image encryption using cellular automata and chaos theory"
+        "description": "Devised an enhanced algorithm for image encryption using cellular automata and chaos theory"
       },
       {
         "school": "Sadjad Institute of Higher Education",
         "degree": "B.Sc.",
         "field": "Computer Software Engineering",
         "location": "Mashhad, Iran",
-        "startDate": "2001",
-        "endDate": "2005",
-        "description": "Developed an algorithm for fast detection of glass particles in glass containers using C# and MATLAB"
+        "description": "Engineered an algorithm for fast detection of glass particles in glass containers using C# and MATLAB"
       }
     ]
   }
