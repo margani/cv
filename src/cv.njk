@@ -34,6 +34,10 @@
                 width: 14px;
                 height: 14px;
             }
+            table > :not(caption) > * > * {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
             .stage {
                 page-break-inside: avoid;
                 page-break-after: auto;
@@ -69,8 +73,8 @@
                             {% endif %}
                         </div>
                     </div>
-                    <div class="col-sm-3 pt-3 details">
-                        <table class="w-100 table-sm">
+                    <div class="col-sm-3 pt-0 details">
+                        <table class="w-100">
                             <tr>
                                 <td class="pt-2">
                                     <ion-icon name="location-outline" class="icon"></ion-icon>
@@ -161,12 +165,14 @@
                         <div class='stage'>
                             <div class="fs-5">{{ education.school }}</div>
                             <span class="fs-6">{{ education.degree }} in {{ education.field }}</span>
-                            <div class="fs-14 pb-1">
-                                <ion-icon name="calendar-outline" class="icon"></ion-icon>
-                                <span>{{ education.startDate }} - {{ education.endDate if education.endDate else "" }}, </span>
-                                <ion-icon class="icon" name="location-outline"></ion-icon>
-                                <span>{{ education.location }}</span>
-                            </div>
+                            {% if education.startDate %}
+                                <div class="fs-14 pb-1">
+                                    <ion-icon name="calendar-outline" class="icon"></ion-icon>
+                                    <span>{{ education.startDate }} - {{ education.endDate if education.endDate else "" }}, </span>
+                                    <ion-icon class="icon" name="location-outline"></ion-icon>
+                                    <span>{{ education.location }}</span>
+                                </div>
+                            {% endif %}
                             <div class='fs-14 pb-3'>
                                 <span>{{ education.description }}</span>
                             </div>
