@@ -20,18 +20,19 @@
                 color: inherit;
                 text-decoration: none;
             }
-            ul {
-                margin: 0;
-                padding-left: 15px;
-            }
-            ul.skills li {
-                line-height: 20pt;
-            }
             .fs-14 {
                 font-size: 14px;
             }
+            .details > div > span,
+            details > div > a {
+                display: inline-block;
+                margin-top: -2px;
+            }
             .icon {
+                position: relative;
                 font-size: 14px;
+                width: 14px;
+                height: 14px;
             }
             .stage {
                 page-break-inside: avoid;
@@ -50,32 +51,100 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-8">
-                        <h1 class="fs-3"><span class="text-primary">{{ name }}</span>&nbsp;<small class="fs-6">({{ gender }})</small></h1>
+                        <h1 class="fs-3">
+                            <span class="text-primary">{{ name }}</span>&nbsp;<small class="fs-6">({{ gender }})</small>
+                        </h1>
                         <h6 class="fs-6">{{ title }}</h6>
                     </div>
                 </div>
                 <div class="row">
-                    <p class="pt-3 pb-3">
-                        {{ summary }}
-                    </p>
+                    <div class="col-sm-9">
+                        <div class="fs-14 pt-3 pb-0">
+                            {% if isArray(summary) %}
+                                {% for paragraph in summary -%}
+                                    <p>{{paragraph}}</p>
+                                {%- endfor %}
+                            {% else %}
+                                <p>{{ summary }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-sm-3 pt-3 details">
+                        <table class="w-100 table-sm">
+                            <tr>
+                                <td class="pt-2">
+                                    <ion-icon name="location-outline" class="icon"></ion-icon>
+                                </td>
+                                <td class="w-100">{{ details.location }}</td>
+                            </tr>
+                            <tr>
+                                <td class="pt-2">
+                                    <ion-icon name="at-outline" class="icon"></ion-icon>
+                                </td>
+                                <td class="w-100">
+                                    <a href="mailto:{{ details.email }}">{{ details.email }}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pt-2">
+                                    <ion-icon name="earth" class="icon"></ion-icon>
+                                </td>
+                                <td class="w-100">
+                                    <a href="{{ details.website }}">{{ details.website | shortUrl }}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pt-2">
+                                    <ion-icon name="logo-github" class="icon"></ion-icon>
+                                </td>
+                                <td class="w-100">
+                                    <a href="{{ details.github }}">{{ details.github | shortUrl }}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pt-2">
+                                    <ion-icon name="logo-linkedin" class="icon"></ion-icon>
+                                </td>
+                                <td class="w-100">
+                                    <a href="{{ details.linkedIn }}">{{ details.linkedIn | shortUrl }}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pt-2">
+                                    <ion-icon name="calendar-outline" class="icon"></ion-icon>
+                                </td>
+                                <td class="w-100">
+                                    <a href="{{ details.meeting }}">{{ details.meeting | shortUrl }}</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-sm-12">
+                        <h3 class="fs-5 text-primary">Skills</h3>
+                        <ul class="skills fs-14 m-0 ps-4 pb-3">
+                            {% for skill in skills -%}
+                                <li class="lh-base">{{ skill }}</li>
+                            {%- endfor %}
+                        </ul>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-8">
-                        <h3 class="fs-5 text-primary">Employment</h3>
-                        {% for employment in history.employment -%}
-                            <div class='stage'>
-                                <span class="fs-5">{{ employment.title }}</span>
-                                <span class="fs-6">{{ employment.employer }}</span>
-                                <div class="fs-14 pb-1">
-                                    <ion-icon name="calendar-outline" class="icon"></ion-icon>
-                                    <span>{{ employment.startDate }} - {{ employment.endDate if employment.endDate else "Now" }} ({{ employment.endDate | dateDiff(employment.startDate) }})</span>
-                                    <span>, </span>
-                                    <ion-icon class="icon" name="location-outline"></ion-icon>
-                                    <span>{{ employment.location }}</span>
-                                </div>
-                                <div class='fs-14 pb-3'>
+                    <h3 class="fs-5 text-primary">Employment</h3>
+                    {% for employment in history.employment -%}
+                        <div class="stage mb-2">
+                            <span class="fw-bold fs-5">{{ employment.title }}</span>
+                            <span class="fs-6">{{ employment.employer }}</span>
+                            <div class="fs-14 pb-1">
+                                <ion-icon name="calendar-outline" class="icon"></ion-icon>
+                                <span>{{ employment.startDate }} - {{ employment.endDate if employment.endDate else "Now" }} ({{ employment.endDate | dateDiff(employment.startDate) }})</span>
+                                <span>, </span>
+                                <ion-icon class="icon" name="location-outline"></ion-icon>
+                                <span>{{ employment.location }}</span>
+                            </div>
+                            {% if employment.description %}
+                                <div class='fs-14'>
                                     {% if isArray(employment.description) %}
-                                        <ul>
+                                        <ul class="mb-0">
                                             {% for description in employment.description -%}
                                                 <li>{{description}}</li>
                                             {%- endfor %}
@@ -84,73 +153,41 @@
                                         <span>{{ employment.description }}</span>
                                     {% endif %}
                                 </div>
+                            {% endif %}
+                        </div>
+                    {%- endfor %}
+                    <h3 class="fs-5 text-primary">Education</h3>
+                    {% for education in history.education -%}
+                        <div class='stage'>
+                            <div class="fs-5">{{ education.school }}</div>
+                            <span class="fs-6">{{ education.degree }} in {{ education.field }}</span>
+                            <div class="fs-14 pb-1">
+                                <ion-icon name="calendar-outline" class="icon"></ion-icon>
+                                <span>{{ education.startDate }} - {{ education.endDate if education.endDate else "" }}, </span>
+                                <ion-icon class="icon" name="location-outline"></ion-icon>
+                                <span>{{ education.location }}</span>
                             </div>
-                        {%- endfor %}
-                        <h3 class="fs-5 text-primary">Education</h3>
-                        {% for education in history.education -%}
-                            <div class='stage'>
-                                <div class="fs-5">{{ education.school }}</div>
-                                <span class="fs-6">{{ education.degree }} in {{ education.field }}</span>
-                                <div class="fs-14 pb-1">
-                                    <ion-icon name="calendar-outline" class="icon"></ion-icon>
-                                    <span>{{ education.startDate }} - {{ education.endDate if education.endDate else "" }}, </span>
-                                    <ion-icon class="icon" name="location-outline"></ion-icon>
-                                    <span>{{ education.location }}</span>
-                                </div>
-                                <div class='fs-14 pb-3'>
-                                    <span>{{ education.description }}</span>
-                                </div>
+                            <div class='fs-14 pb-3'>
+                                <span>{{ education.description }}</span>
                             </div>
-                        {%- endfor %}
+                        </div>
+                    {%- endfor %}
+                    {% if projects %}
                         <h3 class="fs-5 text-primary">Projects</h3>
                         {% for project in projects -%}
                             <div class='stage'>
-                                {% set projectUrl = project.url if project.url else '' %}
+                                {% set projectUrl = project.url if project.url else
+                                    '' %}
                                 {% if projectUrl %}
                                     {% set projectUrl = ' (<a href="' + projectUrl + '">' + projectUrl | shortUrl + '</a>)' %}
                                 {% endif %}
-                                <span class="fs-5">{{ project.title }}</span>{{ projectUrl | safe }}
+                                <span class="fw-bold fs-5">{{ project.title }}</span>{{ projectUrl | safe }}
                                 <div class='fs-14 pb-3'>
                                     <span>{{ project.description }}</span>
                                 </div>
                             </div>
                         {%- endfor %}
-                    </div>
-                    <div class="col-sm-4">
-                        <h3 class="fs-5 text-primary">Details</h3>
-                        <div class="pb-3">
-                            <div>
-                                <ion-icon name="location-outline" class="icon"></ion-icon>
-                                {{ details.location }}
-                            </div>
-                            <div>
-                                <ion-icon name="at-outline" class="icon"></ion-icon>
-                                <a href="mailto:{{ details.email }}">{{ details.email }}</a>
-                            </div>
-                            <div>
-                                <ion-icon name="earth" class="icon"></ion-icon>
-                                <a href="{{ details.website }}">{{ details.website | shortUrl }}</a>
-                            </div>
-                            <div>
-                                <ion-icon name="logo-github" class="icon"></ion-icon>
-                                <a href="{{ details.github }}">{{ details.github | shortUrl }}</a>
-                            </div>
-                            <div>
-                                <ion-icon name="logo-linkedin" class="icon"></ion-icon>
-                                <a href="{{ details.linkedIn }}">{{ details.linkedIn | shortUrl }}</a>
-                            </div>
-                            <div>
-                                <ion-icon name="calendar-outline" class="icon"></ion-icon>
-                                <a href="{{ details.meeting }}">{{ details.meeting | shortUrl }}</a>
-                            </div>
-                        </div>
-                        <h3 class="fs-5 text-primary">Skills</h3>
-                        <ul class="skills fs-14">
-                            {% for skill in skills -%}
-                                <li>{{ skill }}</li>
-                            {%- endfor %}
-                        </ul>
-                    </div>
+                    {% endif %}
                 </div>
             </div>
         </page>
