@@ -1,6 +1,23 @@
+const { exec } = require('child_process');
 const fs = require('fs')
 const nunjucks = require('nunjucks')
 var nunjucksDate = require('nunjucks-date')
+
+function getLastCommitDate(filePath) {
+  return new Promise((resolve, reject) => {
+    const command = `git log -1 --format=%ad -- ${filePath}`;
+
+    exec(command, (error, stdout, stderr) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+
+      const lastCommitDate = stdout.trim();
+      resolve(lastCommitDate);
+    });
+  });
+}
 
 const env = nunjucks.configure({ autoescape: true })
 
@@ -46,13 +63,18 @@ env.addGlobal('isArray', function (obj) {
 
 env.addFilter('top', function (array, n = 1) {
   return array.slice(0, n)
-})
+});
 
-const content = fs.readFileSync('src/cv.njk', 'utf8')
-const data = JSON.parse(fs.readFileSync('src/cv.json', 'utf8'))
-const rendered = env.renderString(content, data)
+(async () => {
+  const content = fs.readFileSync('src/cv.njk', 'utf8')
+  const data = JSON.parse(fs.readFileSync('src/cv.json', 'utf8'))
+  const rendered = env.renderString(content, {
+    ...data,
+    lastUpdated: await getLastCommitDate('src/cv.json')
+  })
 
-if (!fs.existsSync('dist')) {
-  fs.mkdirSync('dist', { recursive: true })
-}
-fs.writeFileSync('dist/index.html', rendered)
+  if (!fs.existsSync('dist')) {
+    fs.mkdirSync('dist', { recursive: true })
+  }
+  fs.writeFileSync('dist/index.html', rendered)
+})()

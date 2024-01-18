@@ -121,6 +121,14 @@
                                     <a href="{{ details.meeting }}">{{ details.meeting | shortUrl }}</a>
                                 </td>
                             </tr>
+                            <tr>
+                                <td class="pt-2">
+                                    <ion-icon name="calendar-outline" class="icon"></ion-icon>
+                                </td>
+                                <td class="w-100">
+                                    updated {{ lastUpdated | dateFormat('D MMM YYYY') }}
+                                </td>
+                            </tr>
                         </table>
                     </div>
                     <div class="col-sm-12">
