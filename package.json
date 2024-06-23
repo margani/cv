@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "node src/build.js",
-    "demo": "npm run build && light-server --serve dist --open --delay 100 --watchexp \"src/** # npm run build # reload\""
+    "build:pdf": "npm run build && node src/build-pdf.js",
+    "demo": "npm run build && light-server --serve dist --open --delay 100 --watchexp \"src/** # npm run build # reload\"",
+    "demo:pdf": "npm run build && light-server --serve dist --open --delay 100 --watchexp \"src/** # npm run build:pdf # reload\""
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
   "devDependencies": {
     "light-server": "^2.9.1",
     "nunjucks": "^3.2.4",
-    "nunjucks-date": "^1.5.0"
+    "nunjucks-date": "^1.5.0",
+    "puppeteer": "^22.12.0"
   }
 }
