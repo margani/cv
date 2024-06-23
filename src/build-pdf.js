@@ -13,5 +13,6 @@ const puppeteer = require("puppeteer");
   const pdfContents = await page.pdf({ format: "A4" });
   await browser.close();
 
-  fs.writeFileSync("dist/cv.pdf", pdfContents);
+  fs.mkdirSync('latest')
+  fs.writeFileSync("latest/Hossein-Margani-CV.pdf", pdfContents);
 })();

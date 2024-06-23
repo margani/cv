@@ -1,0 +1,22 @@
+name: update cv pdf
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts"
+
+      - run: npm ci
+      - run: npm run build:pdf
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_author: GitHub Actions <actions@github.com>
