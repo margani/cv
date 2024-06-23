@@ -24,9 +24,18 @@
     "employment": [
       {
         "title": "Senior DevOps Engineer",
+        "employer": "WTW",
+        "location": "Reigate, UK",
+        "startDate": "June 2024",
+        "description": [
+        ]
+      },
+      {
+        "title": "Senior DevOps Engineer",
         "employer": "Aqovia",
         "location": "London, UK",
         "startDate": "Aug 2022",
+        "endDate": "June 2024",
         "description": [
           "Spearheaded two separate DevOps teams, providing strategic direction and technical guidance in alignment with project goals and industry best practices.",
           "Led the development of Azure infrastructure solutions, ensuring robust, scalable, and secure environments for optimal application deployment and performance.",
