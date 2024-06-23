@@ -6,8 +6,7 @@
   "scripts": {
     "build": "node src/build.js",
     "build:pdf": "npm run build && node src/build-pdf.js",
-    "demo": "npm run build && light-server --serve dist --open --delay 100 --watchexp \"src/** # npm run build # reload\"",
-    "demo:pdf": "npm run build && light-server --serve dist --open --delay 100 --watchexp \"src/** # npm run build:pdf # reload\""
+    "serve": "npm run build && light-server --serve dist --open --delay 100 --watchexp \"src/** # npm run build # reload\""
   },
   "repository": {
     "type": "git",
