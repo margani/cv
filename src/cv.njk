@@ -149,8 +149,7 @@
                             <span class="fs-6">{{ employment.employer }}</span>
                             <div class="fs-14 pb-1">
                                 <ion-icon name="calendar-outline" class="icon"></ion-icon>
-                                <span>{{ employment.startDate }} - {{ employment.endDate if employment.endDate else "Now" }} ({{ employment.endDate | dateDiff(employment.startDate) }})</span>
-                                <span>, </span>
+                                <span>{{ employment.startDate }} - {{ employment.endDate if employment.endDate else "Now" }}{{ employment.endDate | dateDiff(employment.startDate, ' (', ')') if employment.endDate else '' }},</span>
                                 <ion-icon class="icon" name="location-outline"></ion-icon>
                                 <span>{{ employment.location }}</span>
                             </div>

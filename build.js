@@ -23,7 +23,7 @@ const env = nunjucks.configure({ autoescape: true })
 
 nunjucksDate.setDefaultFormat('MMMM Do YYYY, h:mm:ss a')
 env.addFilter('dateFormat', nunjucksDate)
-env.addFilter('dateDiff', function (from, to) {
+env.addFilter('dateDiff', function (from, to, prefix = '', suffix = '') {
   const msInDay = 24 * 60 * 60 * 1000
   const fromTime = from
     ? new Date(Date.parse(from)).getTime()
@@ -46,7 +46,7 @@ env.addFilter('dateDiff', function (from, to) {
     mos = `${months} mo`
     if (months > 1) mos += 's'
   }
-  return `${yrs}${space}${mos}`
+  return `${prefix}${yrs}${space}${mos}${suffix}`
 })
 
 env.addFilter('shortUrl', function (url) {
