@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 const puppeteer = require("puppeteer");
 
 (async function () {
@@ -9,11 +10,16 @@ const puppeteer = require("puppeteer");
   const page = await browser.newPage();
   await page.setContent(content);
   await page.evaluateHandle("document.fonts.ready");
-  await page.waitForNetworkIdle()
+  await page.waitForNetworkIdle();
 
   const pdfContents = await page.pdf({ format: "A4" });
   await browser.close();
 
-  fs.mkdirSync('latest')
-  fs.writeFileSync("latest/Hossein-Margani-CV.pdf", pdfContents);
+  const cvFolderPath = latest;
+  if (!fs.existsSync(cvFolderPath)) {
+    fs.mkdirSync(cvFolderPath);
+  }
+
+  const cvFilePath = path.join(cvFolderPath, "Hossein-Margani-CV.pdf");
+  fs.writeFileSync(cvFilePath, pdfContents);
 })();
