@@ -20,3 +20,4 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_author: GitHub Actions <actions@github.com>
+          commit_message: Update CV pdf
