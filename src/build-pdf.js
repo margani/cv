@@ -9,6 +9,7 @@ const puppeteer = require("puppeteer");
   const page = await browser.newPage();
   await page.setContent(content);
   await page.evaluateHandle("document.fonts.ready");
+  await page.waitForNetworkIdle()
 
   const pdfContents = await page.pdf({ format: "A4" });
   await browser.close();
