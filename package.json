@@ -4,7 +4,7 @@
   "description": "This repo generates my CV into HTML and PDF.",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js",
+    "build": "node src/build.js",
     "demo": "npm run build && light-server --serve dist --open --delay 100 --watchexp \"src/** # npm run build # reload\""
   },
   "repository": {
