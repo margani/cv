@@ -15,7 +15,7 @@ const puppeteer = require("puppeteer");
   const pdfContents = await page.pdf({ format: "A4" });
   await browser.close();
 
-  const cvFolderPath = latest;
+  const cvFolderPath = 'latest';
   if (!fs.existsSync(cvFolderPath)) {
     fs.mkdirSync(cvFolderPath);
   }
