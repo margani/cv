@@ -4,8 +4,9 @@
   "description": "This repo generates my CV into HTML and PDF.",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js",
-    "demo": "npm run build && light-server --serve dist --open --delay 100 --watchexp \"src/** # npm run build # reload\""
+    "build": "node src/build.js",
+    "build:pdf": "npm run build && node src/build-pdf.js",
+    "serve": "npm run build && light-server --serve dist --open --delay 100 --watchexp \"src/** # npm run build # reload\""
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "light-server": "^2.9.1",
     "nunjucks": "^3.2.4",
-    "nunjucks-date": "^1.5.0"
+    "nunjucks-date": "^1.5.0",
+    "puppeteer": "^22.12.0"
   }
 }
