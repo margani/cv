@@ -13,7 +13,7 @@ function getLastCommitDate(filePath) {
         return;
       }
 
-      const lastCommitDate = stdout.trim();
+      const lastCommitDate = new Date(stdout.trim());
       resolve(lastCommitDate);
     });
   });
