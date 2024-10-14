@@ -4,6 +4,7 @@ const puppeteer = require("puppeteer");
 
 (async function () {
   const content = fs.readFileSync("dist/index.html", "utf8");
+  const data = JSON.parse(fs.readFileSync("src/cv.json", "utf8"));
   const browser = await puppeteer.launch({
     headless: true,
   });
@@ -20,6 +21,6 @@ const puppeteer = require("puppeteer");
     fs.mkdirSync(cvFolderPath);
   }
 
-  const cvFilePath = path.join(cvFolderPath, "Hossein-Margani-CV.pdf");
+  const cvFilePath = path.join(cvFolderPath, data.output.fileName);
   fs.writeFileSync(cvFilePath, pdfContents);
 })();
