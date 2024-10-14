@@ -10,6 +10,9 @@
     "github": "https://github.com/margani/",
     "linkedIn": "https://www.linkedin.com/in/hosseinmargani/"
   },
+  "output": {
+    "fileName": "Hossein-Margani-CV.pdf"
+  },
   "summary": [
     "Dynamic and achievement-focused Senior DevOps Engineer with over four years of hands-on experience in designing, implementing, and maintaining secure and efficient cloud infrastructures and a solid foundation in software development."
   ],
