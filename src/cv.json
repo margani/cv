@@ -31,6 +31,11 @@
         "location": "Reigate, UK",
         "startDate": "June 2024",
         "description": [
+          "Learned and adopted Pulumi with C#, implementing multiple infrastructure projects for the Unify teams and modernising existing cloud environments.",
+          "Maintained and improved cloud infrastructure by performing monthly AKS upgrades, patching Windows VM images, and updating Windows/Linux Docker images.",
+          "Designed and implemented infrastructure changes and new services using Pulumi and C#, ensuring scalability, reliability and clean configuration practices.",
+          "Planned and executed the migration from Packer to Azure Image Builder for VM image creation, improving consistency, automation, and build quality.",
+          "Authored and maintained pipeline templates and PowerShell scripts, contributed actively to the DevOps Guild across the organisation, documented infrastructure usage for developers, supported client-raised tickets, and participated in on-call rotations."
         ]
       },
       {
@@ -40,16 +45,11 @@
         "startDate": "Aug 2022",
         "endDate": "June 2024",
         "description": [
-          "Spearheaded two separate DevOps teams, providing strategic direction and technical guidance in alignment with project goals and industry best practices.",
-          "Led the development of Azure infrastructure solutions, ensuring robust, scalable, and secure environments for optimal application deployment and performance.",
-          "Fostered a collaborative and innovative team culture, overseeing the work of DevOps teams to achieve project objectives effectively.",
-          "Provided mentorship and support to team members, fostering skill development and knowledge sharing within the teams.",
-          "Leveraged expert knowledge of Azure infrastructure to architect, implement, and maintain secure cloud environments, optimizing resources for cost-effectiveness and scalability.",
-          "Collaborated closely with developers to understand project requirements, translating them into effective infrastructure solutions that supported seamless development and deployment workflows.",
-          "Championed and embedded DevSecOps practices within the teams, integrating security into the development and deployment pipelines.",
-          "Ensured the adoption of security best practices, conducting regular assessments, and implementing measures to enhance the overall security posture of the projects.",
-          "Encouraged a culture of continuous improvement, regularly evaluating and enhancing the efficiency of CI/CD pipelines and infrastructure provisioning processes.",
-          "Introduced innovative solutions and tools to streamline development workflows, increase automation, and improve overall project delivery timelines."
+          "Led two DevOps teams, providing technical direction, architectural guidance, and promoting best practices across all projects.",
+          "Architected and delivered secure, scalable Azure infrastructure solutions closely aligned with development and business needs.",
+          "Embedded DevSecOps practices by integrating security controls into CI/CD pipelines and enforcing infrastructure security standards.",
+          "Optimised DevOps workflows by improving automation, introducing new tooling, and refining CI/CD pipelines for reliability and performance.",
+          "Mentored engineers and fostered a collaborative culture focused on continuous improvement and cross-team knowledge sharing."
         ]
       },
       {
@@ -59,18 +59,11 @@
         "startDate": "Oct 2018",
         "endDate": "Aug 2022",
         "description": [
-          "Crafted and maintained scripts and templates for automating CI/CD pipelines in Azure Pipelines (YAML).",
-          "Designed and maintained ARM/Bicep templates for provisioning Azure resources for environments.",
-          "Orchestrated container clusters using Azure Kubernetes and Helm v3 charts and Docker containers for deploying external API sandboxes.",
-          "Established an Azure Pipelines-based pipeline for patching and updating Azure Kubernetes clusters to the latest version.",
-          "Provided expert consultation to the development team on optimizing Azure cloud services and implementing efficient DevOps practices. Collaborated with team members to implement robust CI/CD pipelines, ensuring seamless integration of new features and enhancements.",
-          "Automated provisioning of test environments using Chef, Vagrant and Octopus Deploy.",
-          "Streamlined nightly deployment of pipelines to test environments using Azure Pipelines (YAML) and Azure Automation Accounts (PowerShell), complemented by the creation of an informative dashboard in Azure DevOps showcasing the status of all pipeline runs.",
-          "Developed an Octopus Deploy Runbook to automate and orchestrate a complex, cross-team process within the client's organization, significantly reducing the timeline from a month to less than a week.",
-          "Set up and configured private endpoints for Azure services, enhancing security by restricting resource access to designated networks and subnets.",
-          "Managed and sustained WAF policies for Azure Front Door, ensuring robust security measures for front-end applications and APIs.",
-          "Established and upheld SQL vulnerability assessments for Azure SQL databases, offering insightful recommendations to the development team for prompt issue resolution.",
-          "Set up and configured deployment slots for Azure Function Apps, enabling zero-downtime deployments for microservices and APIs."
+          "Designed and implemented ARM/Bicep templates and automated CI/CD pipelines using Azure Pipelines (YAML) for multiple environments.",
+          "Managed AKS clusters, orchestrated deployments with Helm v3 charts, and automated cluster patching and version upgrades.",
+          "Automated provisioning of test environments using Chef, Vagrant, Azure Pipelines and Octopus Deploy.",
+          "Developed dashboards and runbooks to visualise pipeline health, streamline operational tasks, and accelerate complex organisational processes.",
+          "Implemented secure networking patterns including private endpoints, WAF policies, and SQL vulnerability assessments."
         ]
       },
       {
