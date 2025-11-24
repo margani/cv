@@ -14,14 +14,19 @@
     "fileName": "Hossein-Margani-CV.pdf"
   },
   "summary": [
-    "Dynamic and achievement-focused Senior DevOps Engineer with over seven years of hands-on experience in designing, implementing, and maintaining secure and efficient cloud infrastructures and a solid foundation in software development."
+    "Dynamic and highly technical Senior DevOps Engineer with a strong software engineering background and over seven years of hands-on experience building, automating, and operating secure, scalable, cloud-native platforms on Azure. Skilled in modern Infrastructure as Code, container orchestration, and CI/CD automation, with a track record of driving infrastructure reliability, improving engineering workflows, and enabling efficient delivery across teams."
   ],
   "skills": [
-    "Demonstrated expertise in Azure infrastructure, excelling in cost estimation, architectural design, and implementation. Proven success in optimizing cloud resources to ensure cost-effectiveness while maintaining high-performance and scalability.",
-    "Expert in orchestrating CI/CD pipelines using Octopus Deploy, Azure Pipelines and GitHub Actions, ensuring efficient and reliable delivery of software solutions with a focus on automation and continuous integration.",
-    "Expert in PowerShell, Bash and Python scripting for efficient process automation",
-    "Expert in C#, .NET Core, SQL Server, RESTful API",
-    "Expert in crafting and managing Infrastructure as Code solutions using ARM and Bicep templates, ensuring scalable, efficient, and automated deployment of cloud resources."
+    "Deep experience designing and operating Azure infrastructure, including cost-optimisation, security, networking, and large-scale architecture.",
+    "Expert in Infrastructure as Code using Pulumi (C#), Bicep, and ARM templates, delivering reproducible and automated cloud environments.",
+    "Expert in building CI/CD pipelines using Azure Pipelines, GitHub Actions, and Octopus Deploy.",
+    "Strong scripting capability in PowerShell, Bash, and Python for automation, tooling, and pipeline orchestration.",
+    "Skilled in managing AKS clusters, Helm charts, container image pipelines, and platform maintenance (patching, upgrades, image pipelines).",
+    "Experience with Azure Image Builder and container image lifecycle management.",
+    "Strong background in C#, .NET Core, SQL Server, and REST API development.",
+    "Solid full-stack engineering foundation enabling effective collaboration with development teams.",
+    "Experience embedding security best practices into CI/CD pipelines, Azure resources, networking, and cloud governance.",
+    "Familiar with WAF, private endpoints, security assessments, and enterprise-grade compliance practices."
   ],
   "history": {
     "employment": [
@@ -125,4 +130,5 @@
     ]
   }
 }
+
 
