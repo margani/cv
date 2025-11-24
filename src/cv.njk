@@ -80,6 +80,12 @@
                                 <p>{{ summary }}</p>
                             {% endif %}
                         </div>
+                        <h3 class="fs-5 text-primary">Skills</h3>
+                        <ul class="skills m-0 ps-4 pb-3">
+                            {% for skill in skills -%}
+                                <li class="lh-base">{{ skill }}</li>
+                            {%- endfor %}
+                        </ul>
                     </div>
                     <div class="col-sm-3 pt-0 details">
                         <table class="w-100">
@@ -141,12 +147,6 @@
                     </div>
                 </div>
                 <div class="row">
-                    <h3 class="fs-5 text-primary">Skills</h3>
-                    <ul class="skills m-0 ps-4 pb-3">
-                        {% for skill in skills -%}
-                            <li class="lh-base">{{ skill }}</li>
-                        {%- endfor %}
-                    </ul>
                     <h3 class="fs-5 text-primary">Employment</h3>
                     {% for employment in history.employment -%}
                         <div class="stage mb-2">
