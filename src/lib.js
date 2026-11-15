@@ -62,7 +62,17 @@ function resolveLastUpdated(data, filePath, cwd = process.cwd()) {
   return new Date();
 }
 
-const ICON_DIR = path.join(path.dirname(require.resolve("ionicons/package.json")), "dist", "svg");
+// require.resolve("<pkg>/package.json") throws for packages with an "exports"
+// map (ionicons 8), so find the directory on the module search path instead.
+function packageDir(name) {
+  for (const base of require.resolve.paths(name)) {
+    const dir = path.join(base, name);
+    if (fs.existsSync(path.join(dir, "package.json"))) return dir;
+  }
+  throw new Error(`Package not found: ${name}`);
+}
+
+const ICON_DIR = path.join(packageDir("ionicons"), "dist", "svg");
 
 // Inline the SVG so the PDF does not depend on a CDN script rendering web components.
 function icon(name) {
@@ -73,10 +83,7 @@ function icon(name) {
     .replace('class="ionicon"', 'class="icon" aria-hidden="true" focusable="false"');
 }
 
-const FONT_DIR = path.join(
-  path.dirname(require.resolve("@fontsource/open-sans/package.json")),
-  "files",
-);
+const FONT_DIR = path.join(packageDir("@fontsource/open-sans"), "files");
 
 function fontFaces(weights = [400, 500, 700]) {
   return weights
