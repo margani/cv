@@ -279,7 +279,7 @@
                 {% for education in history.education -%}
                     <article class="stage education">
                         <h3 class="stage-sub">{{ education.school }}</h3>
-                        <div class="stage-sub">{{ education.degree }} in {{ education.field }}</div>
+                        <div class="stage-sub">{{ education.degree }} in {{ education.field }}{% if education.endDate and not education.startDate %}, {{ education.endDate }}{% endif %}</div>
                         {% if education.startDate %}
                             <div class="meta">
                                 {{ icon('calendar-outline') }}

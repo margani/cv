@@ -110,14 +110,16 @@
         "degree": "M.Sc.",
         "field": "Computer Software Engineering",
         "location": "Mashhad, Iran",
-        "description": "Devised an enhanced algorithm for image encryption using cellular automata and chaos theory"
+        "description": "Devised an enhanced algorithm for image encryption using cellular automata and chaos theory",
+        "endDate": "2010"
       },
       {
         "school": "Sadjad Institute of Higher Education",
         "degree": "B.Sc.",
         "field": "Computer Software Engineering",
         "location": "Mashhad, Iran",
-        "description": "Engineered an algorithm for fast detection of glass particles in glass containers using C# and MATLAB"
+        "description": "Engineered an algorithm for fast detection of glass particles in glass containers using C# and MATLAB",
+        "endDate": "2006"
       }
     ],
     "earlier": [

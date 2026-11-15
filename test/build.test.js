@@ -71,3 +71,11 @@ test("projects render with their links", () => {
     assert.ok(html.includes(`href="${p.url}"`), p.url);
   }
 });
+
+test("education graduation years render", () => {
+  const withYear = data.history.education.filter((e) => e.endDate);
+  assert.ok(withYear.length > 0);
+  for (const e of withYear) {
+    assert.ok(html.includes(`${e.degree} in ${e.field}, ${e.endDate}`), `${e.degree} ${e.endDate}`);
+  }
+});
