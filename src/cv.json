@@ -14,7 +14,7 @@
     "fileName": "Hossein-Margani-CV.pdf"
   },
   "summary": [
-    "Senior Platform Engineer with 20 years in software engineering, the last 8 in DevOps and platform engineering, building and running secure cloud platforms on Azure. I work with Pulumi (C#), AKS and CI/CD, and currently run five AKS clusters across multiple regions while supporting two development teams of about 10 engineers each. Previously I led two DevOps teams and mentored engineers."
+    "Senior Platform Engineer with 20 years in software engineering, the last 8 in DevOps and platform engineering, building and running secure cloud platforms on Azure. I work with Pulumi (C#), AKS and CI/CD, and currently run multi-region AKS clusters while supporting two development teams of about 10 engineers each. Previously I led two DevOps teams and mentored engineers."
   ],
   "skills": [
     {
@@ -55,9 +55,9 @@
         "startDate": "June 2024",
         "description": [
           "One of two DevOps engineers (with the team lead) supporting two development teams of about 10 engineers each; also support and contribute to the company-wide DevOps Guild.",
-          "Operate five AKS clusters: two for dev (one multi-region) and three for production, each across two regions, with every node pool spread over three availability zones. Run monthly AKS upgrades and patch Windows VM images and Windows/Linux Docker images.",
-          "Cut deployment time from 12 to about 9 minutes (25%) since joining. The deployment runs repeatedly for dev and monthly for production across three regions, each with eight instances deployed independently.",
-          "Implemented multiple infrastructure projects for the Unify teams in Pulumi (C#), modernising existing cloud environments with clean, reproducible configuration.",
+          "Operate AKS clusters for dev and production, multi-region and spread over availability zones for resilience. Run monthly AKS upgrades and patch Windows VM images and Windows/Linux Docker images.",
+          "Cut deployment time by 25% (from 12 to about 9 minutes) since joining, for a multi-region deployment that runs repeatedly for dev and monthly for production.",
+          "Implemented multiple infrastructure projects for the development teams in Pulumi (C#), modernising existing cloud environments with clean, reproducible configuration.",
           "Planned and executed the migration from Packer to Azure Image Builder for VM images, improving consistency, automation and build quality.",
           "Maintain pipeline templates and PowerShell scripts, document infrastructure usage for developers, handle client-raised tickets and take part in the on-call rotation."
         ]
