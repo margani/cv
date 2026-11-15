@@ -2,10 +2,11 @@
   "name": "cv",
   "version": "1.0.0",
   "description": "This repo generates my CV into HTML and PDF.",
-  "main": "index.js",
   "scripts": {
     "build": "node src/build.js",
     "build:pdf": "npm run build && node src/build-pdf.js",
+    "test": "node --test test/",
+    "verify:pdf": "node src/verify-pdf.js",
     "serve": "npm run build && light-server --serve dist --open --delay 100 --watchexp \"src/** # npm run build # reload\""
   },
   "repository": {
@@ -23,9 +24,15 @@
   },
   "homepage": "https://github.com/margani/cv#readme",
   "devDependencies": {
+    "@fontsource/open-sans": "^5.3.0",
+    "ionicons": "^5.5.2",
     "light-server": "^2.9.1",
     "nunjucks": "^3.2.4",
     "nunjucks-date": "^1.5.0",
     "puppeteer": "^25.16.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
   }
 }

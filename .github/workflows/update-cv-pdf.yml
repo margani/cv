@@ -2,22 +2,63 @@ name: update cv pdf
 on:
   workflow_dispatch:
   push:
+    paths:
+      - "src/**"
+      - "test/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/update-cv-pdf.yml"
+  pull_request:
+    paths:
+      - "src/**"
+      - "test/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/update-cv-pdf.yml"
+
+concurrency:
+  group: cv-pdf-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   update:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          # "updated <date>" comes from the last commit touching cv.json; a
+          # shallow clone would print the HEAD date instead.
+          fetch-depth: 0
 
       - name: Use Node.js LTS
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: lts/*
+          cache: npm
+
+      - name: Cache Chrome for Puppeteer
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/puppeteer
+          key: puppeteer-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
       - run: npm ci
+      - run: npm test
       - run: npm run build:pdf
+      - name: Install poppler (pdfinfo, pdffonts, pdftotext)
+        run: sudo apt-get install -y --no-install-recommends poppler-utils
+      - run: npm run verify:pdf
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: actions/upload-artifact@v7
+        with:
+          name: cv-pdf
+          path: latest/*.pdf
+
+      # The build keeps the existing PDF when only Chrome's timestamp changed,
+      # so this commits only when the content really differs.
+      - uses: stefanzweifel/git-auto-commit-action@v7
         if: github.ref == 'refs/heads/main'
         with:
           commit_author: GitHub Actions <actions@github.com>
