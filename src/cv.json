@@ -1,7 +1,7 @@
 {
   "name": "Hossein Margani",
   "gender": "He/Him",
-  "title": "Software Engineer",
+  "title": "Senior DevOps Engineer · Azure · Infrastructure as Code",
   "details": {
     "location": "London, UK",
     "email": "hossein@margani.dev",
@@ -14,19 +14,37 @@
     "fileName": "Hossein-Margani-CV.pdf"
   },
   "summary": [
-    "Dynamic and highly technical Senior DevOps Engineer with a strong software engineering background and over seven years of hands-on experience building, automating, and operating secure, scalable, cloud-native platforms on Azure. Skilled in modern Infrastructure as Code, container orchestration, and CI/CD automation, with a track record of driving infrastructure reliability, improving engineering workflows, and enabling efficient delivery across teams."
+    "Senior DevOps Engineer with 20 years in software engineering, the last 8 in DevOps, building and running secure cloud platforms on Azure. I work with Pulumi (C#), AKS and CI/CD, and currently run five AKS clusters across multiple regions while supporting two development teams of about 10 engineers each. Previously I led two DevOps teams and mentored engineers."
   ],
   "skills": [
-    "Deep experience designing and operating Azure infrastructure, including cost-optimisation, security, networking, and large-scale architecture.",
-    "Expert in Infrastructure as Code using Pulumi (C#), Bicep, and ARM templates, delivering reproducible and automated cloud environments.",
-    "Expert in building CI/CD pipelines using Azure Pipelines, GitHub Actions, and Octopus Deploy.",
-    "Strong scripting capability in PowerShell, Bash, and Python for automation, tooling, and pipeline orchestration.",
-    "Skilled in managing AKS clusters, Helm charts, container image pipelines, and platform maintenance (patching, upgrades, image pipelines).",
-    "Experience with Azure Image Builder and container image lifecycle management.",
-    "Strong background in C#, .NET Core, SQL Server, and REST API development.",
-    "Solid full-stack engineering foundation enabling effective collaboration with development teams.",
-    "Experience embedding security best practices into CI/CD pipelines, Azure resources, networking, and cloud governance.",
-    "Familiar with WAF, private endpoints, security assessments, and enterprise-grade compliance practices."
+    {
+      "label": "Cloud",
+      "items": "Azure (AKS, networking, private endpoints, WAF, cost optimisation, governance)"
+    },
+    {
+      "label": "Infrastructure as code",
+      "items": "Pulumi (C#), Bicep, ARM templates"
+    },
+    {
+      "label": "CI/CD",
+      "items": "Azure Pipelines, GitHub Actions, Octopus Deploy"
+    },
+    {
+      "label": "Containers and images",
+      "items": "AKS, Helm, Docker, Azure Image Builder, Packer"
+    },
+    {
+      "label": "Languages",
+      "items": "C# and .NET Core, PowerShell, Bash, Python, SQL Server, REST APIs"
+    },
+    {
+      "label": "Security",
+      "items": "DevSecOps, security controls in pipelines, security assessments"
+    },
+    {
+      "label": "Leadership",
+      "items": "Led two DevOps teams, mentoring, DevOps Guild contributor"
+    }
   ],
   "history": {
     "employment": [
@@ -36,59 +54,82 @@
         "location": "Reigate, UK",
         "startDate": "June 2024",
         "description": [
-          "Learned and adopted Pulumi with C#, implementing multiple infrastructure projects for the Unify teams and modernising existing cloud environments.",
-          "Maintained and improved cloud infrastructure by performing monthly AKS upgrades, patching Windows VM images, and updating Windows/Linux Docker images.",
-          "Designed and implemented infrastructure changes and new services using Pulumi and C#, ensuring scalability, reliability and clean configuration practices.",
-          "Planned and executed the migration from Packer to Azure Image Builder for VM image creation, improving consistency, automation, and build quality.",
-          "Authored and maintained pipeline templates and PowerShell scripts, contributed actively to the DevOps Guild across the organisation, documented infrastructure usage for developers, supported client-raised tickets, and participated in on-call rotations."
+          "One of two DevOps engineers (with the team lead) supporting two development teams of about 10 engineers each; also support and contribute to the company-wide DevOps Guild.",
+          "Operate five AKS clusters: two for dev (one multi-region) and three for production, each across two regions, with every node pool spread over three availability zones. Run monthly AKS upgrades and patch Windows VM images and Windows/Linux Docker images.",
+          "Cut deployment time from 12 to about 9 minutes (25%) since joining. The deployment runs repeatedly for dev and monthly for production across three regions, each with eight instances deployed independently.",
+          "Implemented multiple infrastructure projects for the Unify teams in Pulumi (C#), modernising existing cloud environments with clean, reproducible configuration.",
+          "Planned and executed the migration from Packer to Azure Image Builder for VM images, improving consistency, automation and build quality.",
+          "Maintain pipeline templates and PowerShell scripts, document infrastructure usage for developers, handle client-raised tickets and take part in the on-call rotation."
         ]
       },
       {
-        "title": "Senior DevOps Engineer",
-        "employer": "Aqovia",
-        "location": "London, UK",
-        "startDate": "Aug 2022",
-        "endDate": "June 2024",
-        "description": [
-          "Led two DevOps teams, providing technical direction, architectural guidance, and promoting best practices across all projects.",
-          "Architected and delivered secure, scalable Azure infrastructure solutions closely aligned with development and business needs.",
-          "Embedded DevSecOps practices by integrating security controls into CI/CD pipelines and enforcing infrastructure security standards.",
-          "Optimised DevOps workflows by improving automation, introducing new tooling, and refining CI/CD pipelines for reliability and performance.",
-          "Mentored engineers and fostered a collaborative culture focused on continuous improvement and cross-team knowledge sharing."
-        ]
-      },
-      {
-        "title": "DevOps Engineer",
-        "employer": "Aqovia",
-        "location": "London, UK",
-        "startDate": "Oct 2018",
-        "endDate": "Aug 2022",
-        "description": [
-          "Designed and implemented ARM/Bicep templates and automated CI/CD pipelines using Azure Pipelines (YAML) for multiple environments.",
-          "Managed AKS clusters, orchestrated deployments with Helm v3 charts, and automated cluster patching and version upgrades.",
-          "Automated provisioning of test environments using Chef, Vagrant, Azure Pipelines and Octopus Deploy.",
-          "Developed dashboards and runbooks to visualise pipeline health, streamline operational tasks, and accelerate complex organisational processes.",
-          "Implemented secure networking patterns including private endpoints, WAF policies, and SQL vulnerability assessments."
-        ]
-      },
-      {
-        "title": "Senior Software Engineer",
         "employer": "Aqovia",
         "location": "London, UK",
         "startDate": "Oct 2017",
-        "endDate": "Oct 2018",
-        "description": [
-          "Engaged in productive collaboration with the team to comprehend requirements and business specifications effectively.",
-          "Engaged in full-stack development using .NET, lit-html, Redux, with a focus on Test-Driven Development",
-          "Designed and sustained web application architecture, microservices, and contemporary component-based user interfaces."
+        "endDate": "Aug 2022",
+        "positions": [
+          {
+            "title": "Senior DevOps Engineer",
+            "startDate": "Aug 2022",
+            "endDate": "June 2024",
+            "description": [
+              "Led two DevOps teams, setting technical direction and architecture and promoting best practices across all projects.",
+              "Designed and delivered secure, scalable Azure infrastructure aligned with development and business needs.",
+              "Embedded DevSecOps by adding security controls to CI/CD pipelines and enforcing infrastructure security standards.",
+              "Improved DevOps workflows through automation, new tooling and refined CI/CD pipelines for reliability and performance.",
+              "Mentored engineers and ran cross-team knowledge sharing."
+            ]
+          },
+          {
+            "title": "DevOps Engineer",
+            "startDate": "Oct 2018",
+            "endDate": "Aug 2022",
+            "description": [
+              "Designed ARM/Bicep templates and automated CI/CD pipelines with Azure Pipelines (YAML) for multiple environments.",
+              "Managed AKS clusters, deployed with Helm v3 charts, and automated cluster patching and version upgrades.",
+              "Automated test environment provisioning with Chef, Vagrant, Azure Pipelines and Octopus Deploy.",
+              "Built dashboards and runbooks to visualise pipeline health and speed up operational tasks.",
+              "Implemented secure networking patterns: private endpoints, WAF policies and SQL vulnerability assessments."
+            ]
+          },
+          {
+            "title": "Senior Software Engineer",
+            "startDate": "Oct 2017",
+            "endDate": "Oct 2018",
+            "description": [
+              "Built full-stack web applications with .NET, lit-html and Redux, using test-driven development.",
+              "Designed web application architecture, microservices and component-based UIs."
+            ]
+          }
         ]
+      }
+    ],
+    "education": [
+      {
+        "school": "Islamic Azad University of Mashhad",
+        "degree": "M.Sc.",
+        "field": "Computer Software Engineering",
+        "location": "Mashhad, Iran",
+        "description": "Devised an enhanced algorithm for image encryption using cellular automata and chaos theory"
       },
+      {
+        "school": "Sadjad Institute of Higher Education",
+        "degree": "B.Sc.",
+        "field": "Computer Software Engineering",
+        "location": "Mashhad, Iran",
+        "description": "Engineered an algorithm for fast detection of glass particles in glass containers using C# and MATLAB"
+      }
+    ],
+    "earlier": [
       {
         "title": "Senior Software Engineer",
         "employer": "Geeks Ltd",
         "location": "London, UK",
         "startDate": "Mar 2016",
         "endDate": "Sep 2017"
+      },
+      {
+        "note": "Jun 2015 - Mar 2016: relocation to the UK"
       },
       {
         "title": "Software Engineer",
@@ -111,24 +152,23 @@
         "startDate": "May 2006",
         "endDate": "May 2010"
       }
-    ],
-    "education": [
-      {
-        "school": "Islamic Azad University of Mashhad",
-        "degree": "M.Sc.",
-        "field": "Computer Software Engineering",
-        "location": "Mashhad, Iran",
-        "description": "Devised an enhanced algorithm for image encryption using cellular automata and chaos theory"
-      },
-      {
-        "school": "Sadjad Institute of Higher Education",
-        "degree": "B.Sc.",
-        "field": "Computer Software Engineering",
-        "location": "Mashhad, Iran",
-        "description": "Engineered an algorithm for fast detection of glass particles in glass containers using C# and MATLAB"
-      }
     ]
-  }
+  },
+  "projects": [
+    {
+      "title": "Nabz",
+      "url": "https://lytron.co.uk/work/nabz",
+      "description": "Open-source multi-zone uptime monitoring that only pages when zones agree. Go workers per zone and a central evaluator, provisioned from nothing by GitHub Actions; a 3-server production fleet costs about €19 a month and was benchmarked at roughly 4,500 checks per second."
+    },
+    {
+      "title": "image-factory",
+      "url": "https://github.com/LytronHQ/image-factory",
+      "description": "Reusable GitHub Actions pipeline for container images a stranger can verify: pinned digests, scanning, Cosign signing, SBOM and SLSA provenance."
+    },
+    {
+      "title": "Chogan",
+      "url": "https://lytron.co.uk/work/chogan",
+      "description": "Free offline Android and web games with byte-for-byte reproducible builds, shipped identically through GitHub Releases and F-Droid and gated by 318 automated checks."
+    }
+  ]
 }
-
-

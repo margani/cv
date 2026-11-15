@@ -47,3 +47,27 @@ test("the updated row uses a clock icon, not a second calendar", () => {
   assert.ok(html.includes(icon("time-outline")));
   assert.match(html, /updated \d/);
 });
+
+test("grouped employer, grouped skills and earlier roles render", () => {
+  const grouped = data.history.employment.filter((e) => e.positions);
+  assert.ok(grouped.length > 0);
+  for (const e of grouped) {
+    assert.ok(html.includes(`>${e.employer}</h3>`), e.employer);
+    for (const p of e.positions) assert.ok(html.includes(`>${p.title}</h4>`), p.title);
+  }
+  const groups = data.skills.filter((s) => s.label);
+  assert.ok(groups.length > 0);
+  for (const g of groups) assert.ok(html.includes(`<strong>${g.label}:</strong>`), g.label);
+  assert.ok(data.history.earlier.length > 0);
+  for (const r of data.history.earlier) {
+    assert.ok(html.includes(r.employer || r.note), r.employer || r.note);
+  }
+});
+
+test("projects render with their links", () => {
+  assert.ok(data.projects.length > 0);
+  for (const p of data.projects) {
+    assert.ok(html.includes(`>${p.title}</h3>`), p.title);
+    assert.ok(html.includes(`href="${p.url}"`), p.url);
+  }
+});

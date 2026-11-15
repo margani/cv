@@ -24,6 +24,13 @@ needs `poppler-utils`.
 `updated <date>` in the page is the last commit that touched `src/cv.json`; set
 `"lastUpdated": "YYYY-MM-DD"` in `cv.json` to override it.
 
+## cv.json shapes
+
+`skills` takes plain strings or `{label, items}` groups. An `employment` entry is
+either one role (`title`, `employer`, `description`) or an employer with
+`positions: [{title, startDate, endDate, description}]`. `history.earlier` lists
+short one-line roles, and an entry with only `note` prints as an italic line.
+
 ## Latest CV
 
 My latest CV is available to download [here](https://raw.githubusercontent.com/margani/cv/main/latest/Hossein-Margani-CV.pdf).

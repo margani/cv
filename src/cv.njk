@@ -109,6 +109,31 @@
                 font-weight: 700;
                 display: inline;
             }
+            .position-title {
+                font-size: 1.15rem;
+                font-weight: 700;
+                display: inline;
+                margin-right: 0.3rem;
+            }
+            .employer > .stage-title {
+                margin-right: 0.3rem;
+            }
+            .stage.position {
+                margin-bottom: 0.4rem;
+            }
+            .earlier-title {
+                margin: 0.4rem 0 0.1rem;
+                font-weight: 700;
+            }
+            .earlier {
+                padding-left: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            .earlier .note {
+                list-style: none;
+                margin-left: -1rem;
+                font-style: italic;
+            }
             .stage-sub {
                 font-size: 1rem;
             }
@@ -167,7 +192,11 @@
                         <h2 class="section-title">Skills</h2>
                         <ul class="skills">
                             {% for skill in skills -%}
-                                <li>{{ skill }}</li>
+                                {% if skill.label %}
+                                    <li><strong>{{ skill.label }}:</strong> {{ skill.items }}</li>
+                                {% else %}
+                                    <li>{{ skill }}</li>
+                                {% endif %}
                             {%- endfor %}
                         </ul>
                     </section>
@@ -187,28 +216,63 @@
             <section>
                 <h2 class="section-title">Employment</h2>
                 {% for employment in history.employment -%}
-                    <article class="stage">
-                        <h3 class="stage-title">{{ employment.title }}</h3>
-                        <span class="stage-sub">{{ employment.employer }}</span>
-                        <div class="meta">
-                            {{ icon('calendar-outline') }}
-                            <span>{{ employment.startDate }} - {{ employment.endDate if employment.endDate else "Now" }}{{ employment.endDate | dateDiff(employment.startDate, ' (', ')') if employment.endDate else '' }},</span>
-                            {{ icon('location-outline') }}
-                            <span>{{ employment.location }}</span>
-                        </div>
-                        {% if employment.description %}
-                            {% if isArray(employment.description) %}
-                                <ul>
-                                    {% for description in employment.description -%}
-                                        <li>{{ description }}</li>
-                                    {%- endfor %}
-                                </ul>
-                            {% else %}
-                                <span>{{ employment.description }}</span>
+                    {% if employment.positions %}
+                        <article class="employer">
+                            <h3 class="stage-title">{{ employment.employer }}</h3>
+                            <div class="meta">
+                                {{ icon('calendar-outline') }}
+                                <span>{{ employment.startDate }} - {{ employment.endDate if employment.endDate else "Now" }}{{ employment.endDate | dateDiff(employment.startDate, ' (', ')') if employment.endDate else '' }},</span>
+                                {{ icon('location-outline') }}
+                                <span>{{ employment.location }}</span>
+                            </div>
+                            {% for position in employment.positions -%}
+                                <section class="stage position">
+                                    <h4 class="position-title">{{ position.title }}</h4>
+                                    <span class="stage-sub">{{ position.startDate }} - {{ position.endDate if position.endDate else "Now" }}{{ position.endDate | dateDiff(position.startDate, ' (', ')') if position.endDate else '' }}</span>
+                                    <ul>
+                                        {% for description in position.description -%}
+                                            <li>{{ description }}</li>
+                                        {%- endfor %}
+                                    </ul>
+                                </section>
+                            {%- endfor %}
+                        </article>
+                    {% else %}
+                        <article class="stage">
+                            <h3 class="stage-title">{{ employment.title }}</h3>
+                            <span class="stage-sub">{{ employment.employer }}</span>
+                            <div class="meta">
+                                {{ icon('calendar-outline') }}
+                                <span>{{ employment.startDate }} - {{ employment.endDate if employment.endDate else "Now" }}{{ employment.endDate | dateDiff(employment.startDate, ' (', ')') if employment.endDate else '' }},</span>
+                                {{ icon('location-outline') }}
+                                <span>{{ employment.location }}</span>
+                            </div>
+                            {% if employment.description %}
+                                {% if isArray(employment.description) %}
+                                    <ul>
+                                        {% for description in employment.description -%}
+                                            <li>{{ description }}</li>
+                                        {%- endfor %}
+                                    </ul>
+                                {% else %}
+                                    <span>{{ employment.description }}</span>
+                                {% endif %}
                             {% endif %}
-                        {% endif %}
-                    </article>
+                        </article>
+                    {% endif %}
                 {%- endfor %}
+                {% if history.earlier %}
+                    <h3 class="stage-sub earlier-title">Earlier roles</h3>
+                    <ul class="earlier">
+                        {% for role in history.earlier -%}
+                            {% if role.note %}
+                                <li class="note">{{ role.note }}</li>
+                            {% else %}
+                                <li><strong>{{ role.title }}</strong>, {{ role.employer }}, {{ role.location }} ({{ role.startDate }} - {{ role.endDate }})</li>
+                            {% endif %}
+                        {%- endfor %}
+                    </ul>
+                {% endif %}
             </section>
             <section>
                 <h2 class="section-title">Education</h2>
