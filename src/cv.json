@@ -1,7 +1,7 @@
 {
   "name": "Hossein Margani",
   "gender": "He/Him",
-  "title": "Senior DevOps Engineer · Azure · Infrastructure as Code",
+  "title": "Senior Platform Engineer · Azure · Infrastructure as Code",
   "details": {
     "location": "London, UK",
     "email": "hossein@margani.dev",
@@ -14,7 +14,7 @@
     "fileName": "Hossein-Margani-CV.pdf"
   },
   "summary": [
-    "Senior DevOps Engineer with 20 years in software engineering, the last 8 in DevOps, building and running secure cloud platforms on Azure. I work with Pulumi (C#), AKS and CI/CD, and currently run five AKS clusters across multiple regions while supporting two development teams of about 10 engineers each. Previously I led two DevOps teams and mentored engineers."
+    "Senior Platform Engineer with 20 years in software engineering, the last 8 in DevOps and platform engineering, building and running secure cloud platforms on Azure. I work with Pulumi (C#), AKS and CI/CD, and currently run five AKS clusters across multiple regions while supporting two development teams of about 10 engineers each. Previously I led two DevOps teams and mentored engineers."
   ],
   "skills": [
     {
@@ -35,7 +35,7 @@
     },
     {
       "label": "Languages",
-      "items": "C# and .NET Core, PowerShell, Bash, Python, SQL Server, REST APIs"
+      "items": "C# and .NET Core, Go, PowerShell, Bash, Python, SQL Server, REST APIs"
     },
     {
       "label": "Security",
