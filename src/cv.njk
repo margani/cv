@@ -4,212 +4,242 @@
         <title>{{ name }}'s CV</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
-        <meta name="description" content=""/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-        <style type="text/css">
-            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        <meta name="description" content="{{ name }}, {{ title }} based in {{ details.location }}."/>
+        <style>
+{{ fontFaces }}
+            /* One page box for screen and print: @page owns the margins, so page 2
+               gets the same margin as page 1 instead of a hand-tuned offset. */
+            @page {
+                size: A4;
+                margin: 1.2cm 1cm;
+            }
+            :root {
+                --accent: #0d6efd;
+                --text: #212529;
+            }
+            * {
+                box-sizing: border-box;
+            }
             html {
                 font-size: 13px;
             }
             body {
+                margin: 0;
                 font-family: "Open Sans", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: normal;
-                font-style: normal;
-                font-variation-settings: "wdth" 100;
-            }
-            page[size="A4"] {
-                width: 21cm;
-                height: 29.7cm;
-                position: relative;
-                padding: 0 1cm;
-                top: 50px;
-                display: block;
-                margin: 15px auto;
+                line-height: 1.5;
+                color: var(--text);
+                background: #fff;
             }
             a {
                 color: inherit;
                 text-decoration: none;
             }
-            .details > div > span,
-            details > div > a {
-                display: inline-block;
-                margin-top: -2px;
+            h1, h2, h3, h4, p, ul {
+                margin: 0;
+            }
+            h1, h2, h3, h4 {
+                font-weight: 500;
+                line-height: 1.2;
+            }
+            .sheet {
+                width: min(21cm, 100%);
+                margin: 15px auto;
+                padding: 1.2cm 1cm;
+            }
+            .name {
+                font-size: 1.7rem;
+                color: var(--accent);
+            }
+            .name small {
+                font-size: 1rem;
+                font-weight: 400;
+                color: var(--text);
+            }
+            .headline {
+                font-size: 1rem;
+                margin-top: 0.4rem;
+            }
+            .top {
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                column-gap: 1rem;
+            }
+            .intro {
+                padding-top: 1rem;
+            }
+            .intro p {
+                margin-bottom: 1rem;
+            }
+            .section-title {
+                font-size: 1.45rem;
+                color: var(--accent);
+                margin-bottom: 0.4rem;
+            }
+            .skills {
+                padding-left: 2rem;
+                padding-bottom: 1rem;
+            }
+            .contact {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .contact li {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.3rem;
+                padding-top: 0.5rem;
+                overflow-wrap: anywhere;
+            }
+            .contact .icon {
+                margin-top: 0.2rem;
             }
             .icon {
-                position: relative;
-                font-size: 14px;
+                flex: none;
                 width: 14px;
                 height: 14px;
-            }
-            table > :not(caption) > * > * {
-                padding-top: 0;
-                padding-bottom: 0;
+                vertical-align: -2px;
             }
             .stage {
-                page-break-inside: avoid;
-                page-break-after: auto;
+                break-inside: avoid;
+                margin-bottom: 0.5rem;
+            }
+            .stage-title {
+                font-size: 1.45rem;
+                font-weight: 700;
+                display: inline;
+            }
+            .stage-sub {
+                font-size: 1rem;
+            }
+            .meta {
+                padding-bottom: 0.25rem;
+            }
+            .stage ul {
+                padding-left: 2rem;
+            }
+            .stage.education,
+            .stage.project {
+                margin-bottom: 0;
+            }
+            .stage .blurb {
+                padding-bottom: 1rem;
+            }
+            @media (max-width: 640px) {
+                .sheet {
+                    padding: 16px;
+                    margin: 0 auto;
+                }
+                .top {
+                    grid-template-columns: 1fr;
+                }
+                .top aside {
+                    order: -1;
+                }
             }
             @media print {
-                body,
-                page[size="A4"] {
+                .sheet {
+                    width: auto;
                     margin: 0;
+                    padding: 0;
                 }
             }
         </style>
     </head>
     <body>
-        <page size="A4">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h1 class="fs-3">
-                            <span class="text-primary">{{ name }}</span>&nbsp;<small class="fs-6">({{ gender }})</small>
-                        </h1>
-                        <h6 class="fs-6">{{ title }}</h6>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-9">
-                        <div class="pt-3 pb-0">
-                            {% if isArray(summary) %}
-                                {% for paragraph in summary -%}
-                                    <p>{{paragraph}}</p>
-                                {%- endfor %}
-                            {% else %}
-                                <p>{{ summary }}</p>
-                            {% endif %}
-                        </div>
-                        <h3 class="fs-5 text-primary">Skills</h3>
-                        <ul class="skills m-0 ps-4 pb-3">
+        <main class="sheet">
+            <header>
+                <h1 class="name">{{ name }} <small>({{ gender }})</small></h1>
+                <p class="headline">{{ title }}</p>
+            </header>
+            <div class="top">
+                <div>
+                    <section class="intro" aria-label="Summary">
+                        {% if isArray(summary) %}
+                            {% for paragraph in summary -%}
+                                <p>{{ paragraph }}</p>
+                            {%- endfor %}
+                        {% else %}
+                            <p>{{ summary }}</p>
+                        {% endif %}
+                    </section>
+                    <section>
+                        <h2 class="section-title">Skills</h2>
+                        <ul class="skills">
                             {% for skill in skills -%}
-                                <li class="lh-base">{{ skill }}</li>
+                                <li>{{ skill }}</li>
                             {%- endfor %}
                         </ul>
-                    </div>
-                    <div class="col-sm-3 pt-0 details">
-                        <table class="w-100">
-                            <tr>
-                                <td class="pt-2">
-                                    <ion-icon name="location-outline" class="icon"></ion-icon>
-                                </td>
-                                <td class="w-100">{{ details.location }}</td>
-                            </tr>
-                            <tr>
-                                <td class="pt-2">
-                                    <ion-icon name="at-outline" class="icon"></ion-icon>
-                                </td>
-                                <td class="w-100">
-                                    <a href="mailto:{{ details.email }}">{{ details.email }}</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="pt-2">
-                                    <ion-icon name="earth" class="icon"></ion-icon>
-                                </td>
-                                <td class="w-100">
-                                    <a href="{{ details.website }}">{{ details.website | shortUrl }}</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="pt-2">
-                                    <ion-icon name="logo-github" class="icon"></ion-icon>
-                                </td>
-                                <td class="w-100">
-                                    <a href="{{ details.github }}">{{ details.github | shortUrl }}</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="pt-2">
-                                    <ion-icon name="logo-linkedin" class="icon"></ion-icon>
-                                </td>
-                                <td class="w-100">
-                                    <a href="{{ details.linkedIn }}">{{ details.linkedIn | shortUrl }}</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="pt-2">
-                                    <ion-icon name="calendar-outline" class="icon"></ion-icon>
-                                </td>
-                                <td class="w-100">
-                                    <a href="{{ details.meeting }}">{{ details.meeting | shortUrl }}</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="pt-2">
-                                    <ion-icon name="calendar-outline" class="icon"></ion-icon>
-                                </td>
-                                <td class="w-100">
-                                    updated {{ lastUpdated | dateFormat('D MMM YYYY') }}
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                    </section>
                 </div>
-                <div class="row">
-                    <h3 class="fs-5 text-primary">Employment</h3>
-                    {% for employment in history.employment -%}
-                        <div class="stage mb-2">
-                            <span class="fw-bold fs-5">{{ employment.title }}</span>
-                            <span class="fs-6">{{ employment.employer }}</span>
-                            <div class="pb-1">
-                                <ion-icon name="calendar-outline" class="icon"></ion-icon>
-                                <span>{{ employment.startDate }} - {{ employment.endDate if employment.endDate else "Now" }}{{ employment.endDate | dateDiff(employment.startDate, ' (', ')') if employment.endDate else '' }},</span>
-                                <ion-icon class="icon" name="location-outline"></ion-icon>
-                                <span>{{ employment.location }}</span>
-                            </div>
-                            {% if employment.description %}
-                                {% if isArray(employment.description) %}
-                                    <ul class="mb-0">
-                                        {% for description in employment.description -%}
-                                            <li>{{description}}</li>
-                                        {%- endfor %}
-                                    </ul>
-                                {% else %}
-                                    <span>{{ employment.description }}</span>
-                                {% endif %}
-                            {% endif %}
-                        </div>
-                    {%- endfor %}
-                    <h3 class="fs-5 text-primary">Education</h3>
-                    {% for education in history.education -%}
-                        <div class='stage'>
-                            <div class="fs-5">{{ education.school }}</div>
-                            <span class="fs-6">{{ education.degree }} in {{ education.field }}</span>
-                            {% if education.startDate %}
-                                <div class="pb-1">
-                                    <ion-icon name="calendar-outline" class="icon"></ion-icon>
-                                    <span>{{ education.startDate }} - {{ education.endDate if education.endDate else "" }}, </span>
-                                    <ion-icon class="icon" name="location-outline"></ion-icon>
-                                    <span>{{ education.location }}</span>
-                                </div>
-                            {% endif %}
-                            <div class='pb-3'>
-                                <span>{{ education.description }}</span>
-                            </div>
-                        </div>
-                    {%- endfor %}
-                    {% if projects %}
-                        <h3 class="fs-5 text-primary">Projects</h3>
-                        {% for project in projects -%}
-                            <div class='stage'>
-                                {% set projectUrl = project.url if project.url else
-                                    '' %}
-                                {% if projectUrl %}
-                                    {% set projectUrl = ' (<a href="' + projectUrl + '">' + projectUrl | shortUrl + '</a>)' %}
-                                {% endif %}
-                                <span class="fw-bold fs-5">{{ project.title }}</span>{{ projectUrl | safe }}
-                                <div class='pb-3'>
-                                    <span>{{ project.description }}</span>
-                                </div>
-                            </div>
-                        {%- endfor %}
-                    {% endif %}
-                </div>
+                <aside aria-label="Contact">
+                    <ul class="contact">
+                        <li>{{ icon('location-outline') }}<span>{{ details.location }}</span></li>
+                        <li>{{ icon('at-outline') }}<a href="mailto:{{ details.email }}">{{ details.email }}</a></li>
+                        <li>{{ icon('earth') }}<a href="{{ details.website }}">{{ details.website | shortUrl }}</a></li>
+                        <li>{{ icon('logo-github') }}<a href="{{ details.github }}">{{ details.github | shortUrl }}</a></li>
+                        <li>{{ icon('logo-linkedin') }}<a href="{{ details.linkedIn }}">{{ details.linkedIn | shortUrl }}</a></li>
+                        <li>{{ icon('calendar-outline') }}<a href="{{ details.meeting }}">{{ details.meeting | shortUrl }}</a></li>
+                        <li>{{ icon('time-outline') }}<span>updated {{ lastUpdated | dateFormat('D MMM YYYY') }}</span></li>
+                    </ul>
+                </aside>
             </div>
-        </page>
-
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            <section>
+                <h2 class="section-title">Employment</h2>
+                {% for employment in history.employment -%}
+                    <article class="stage">
+                        <h3 class="stage-title">{{ employment.title }}</h3>
+                        <span class="stage-sub">{{ employment.employer }}</span>
+                        <div class="meta">
+                            {{ icon('calendar-outline') }}
+                            <span>{{ employment.startDate }} - {{ employment.endDate if employment.endDate else "Now" }}{{ employment.endDate | dateDiff(employment.startDate, ' (', ')') if employment.endDate else '' }},</span>
+                            {{ icon('location-outline') }}
+                            <span>{{ employment.location }}</span>
+                        </div>
+                        {% if employment.description %}
+                            {% if isArray(employment.description) %}
+                                <ul>
+                                    {% for description in employment.description -%}
+                                        <li>{{ description }}</li>
+                                    {%- endfor %}
+                                </ul>
+                            {% else %}
+                                <span>{{ employment.description }}</span>
+                            {% endif %}
+                        {% endif %}
+                    </article>
+                {%- endfor %}
+            </section>
+            <section>
+                <h2 class="section-title">Education</h2>
+                {% for education in history.education -%}
+                    <article class="stage education">
+                        <h3 class="stage-sub">{{ education.school }}</h3>
+                        <div class="stage-sub">{{ education.degree }} in {{ education.field }}</div>
+                        {% if education.startDate %}
+                            <div class="meta">
+                                {{ icon('calendar-outline') }}
+                                <span>{{ education.startDate }} - {{ education.endDate if education.endDate else "" }}, </span>
+                                {{ icon('location-outline') }}
+                                <span>{{ education.location }}</span>
+                            </div>
+                        {% endif %}
+                        <p class="blurb">{{ education.description }}</p>
+                    </article>
+                {%- endfor %}
+            </section>
+            {% if projects %}
+                <section>
+                    <h2 class="section-title">Projects</h2>
+                    {% for project in projects -%}
+                        <article class="stage project">
+                            <h3 class="stage-title">{{ project.title }}</h3>
+                            {% if project.url %}(<a href="{{ project.url }}">{{ project.url | shortUrl }}</a>){% endif %}
+                            <p class="blurb">{{ project.description }}</p>
+                        </article>
+                    {%- endfor %}
+                </section>
+            {% endif %}
+        </main>
     </body>
 </html>

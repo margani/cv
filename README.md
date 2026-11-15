@@ -4,11 +4,25 @@ This repo generates my CV into HTML and PDF.
 
 ## Build
 
-`npm run build`
+`npm run build` renders `dist/index.html`. The page is self-contained (fonts and
+icons are inlined from `node_modules`), so it builds offline.
+
+`npm run build:pdf` also renders `latest/<output.fileName>`. On machines that
+block Chrome's sandbox (Ubuntu 23.10+) run it as `CI=1 npm run build:pdf`.
+The existing PDF is kept when only Chrome's timestamp would change.
 
 ## Run
 
-`npm run demo`
+`npm run serve` serves the page with live reload.
+
+## Test
+
+`npm test` runs the unit and build tests; `npm run verify:pdf` checks the
+generated PDF (page count, embedded non-Type-3 fonts, tags, text layer) and
+needs `poppler-utils`.
+
+`updated <date>` in the page is the last commit that touched `src/cv.json`; set
+`"lastUpdated": "YYYY-MM-DD"` in `cv.json` to override it.
 
 ## Latest CV
 
