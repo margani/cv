@@ -93,3 +93,16 @@ test("every position bullet in cv.json is rendered", () => {
   }
   assert.ok(count > 10);
 });
+
+test("an employer spans all of its positions", () => {
+  const months = ["jan","feb","mar","apr","may","jun","june","jul","aug","sep","oct","nov","dec"];
+  const key = (s) => { const [m, y] = s.toLowerCase().split(" "); return Number(y) * 12 + (months.indexOf(m) % 13); };
+  let checked = 0;
+  for (const e of data.history.employment) {
+    if (!e.positions || !e.endDate) continue;
+    checked++;
+    const last = Math.max(...e.positions.map((p) => key(p.endDate || e.endDate)));
+    assert.ok(key(e.endDate) >= last, `${e.employer} ends before its last position`);
+  }
+  assert.ok(checked >= 1);
+});
