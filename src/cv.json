@@ -19,7 +19,7 @@
   "skills": [
     {
       "label": "Cloud",
-      "items": "Azure (AKS, networking, private endpoints, WAF, cost optimisation, governance)"
+      "items": "Azure (AKS, Functions, Service Bus, Redis, networking, private endpoints, WAF, cost optimisation, governance)"
     },
     {
       "label": "Infrastructure as code",
@@ -27,7 +27,7 @@
     },
     {
       "label": "CI/CD",
-      "items": "Azure Pipelines, GitHub Actions, Octopus Deploy"
+      "items": "Azure Pipelines, GitHub Actions, Octopus Deploy, TeamCity"
     },
     {
       "label": "Containers and images",
@@ -86,6 +86,8 @@
             "endDate": "Aug 2022",
             "description": [
               "Designed ARM/Bicep templates and automated CI/CD pipelines with Azure Pipelines (YAML) for multiple environments.",
+              "Delivered CI/CD for about 40 microservices plus several standalone projects: Octopus Deploy while on-premises, Azure Pipelines for the roughly 20 newer C# Azure Functions services, and TeamCity for building the legacy ones.",
+              "Migrated all repositories from Bitbucket to GitHub, and moved Service Bus, Redis and several applications from on-premises to Azure.",
               "Managed AKS clusters, deployed with Helm v3 charts, and automated cluster patching and version upgrades.",
               "Automated test environment provisioning with Chef, Vagrant, Azure Pipelines and Octopus Deploy.",
               "Built dashboards and runbooks to visualise pipeline health and speed up operational tasks.",

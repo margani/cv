@@ -79,3 +79,17 @@ test("education graduation years render", () => {
     assert.ok(html.includes(`${e.degree} in ${e.field}, ${e.endDate}`), `${e.degree} ${e.endDate}`);
   }
 });
+
+test("every position bullet in cv.json is rendered", () => {
+  const he = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  let count = 0;
+  for (const e of data.history.employment) {
+    for (const p of e.positions || [e]) {
+      for (const b of p.description || []) {
+        count++;
+        assert.ok(html.includes(he(b)), b.slice(0, 40));
+      }
+    }
+  }
+  assert.ok(count > 10);
+});
